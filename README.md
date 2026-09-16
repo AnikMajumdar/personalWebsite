@@ -18,14 +18,14 @@ A premium, futuristic personal portfolio for a software engineer — dark, minim
 - [Tailwind CSS v4](https://tailwindcss.com) · [Motion](https://motion.dev) · [Lucide](https://lucide.dev) · [Geist](https://vercel.com/font)
 - [Clerk](https://clerk.com) — authentication (resume access only)
 - [Neon](https://neon.tech) — serverless Postgres (access audit / future data)
-- [Cloudflare Workers](https://developers.cloudflare.com/workers/) via [OpenNext](https://opennext.js.org/cloudflare) — deployment
+- [Render](https://render.com) — deployment (Node web service)
 
 ## Architecture
 
 ```
               ┌──────────────────────┐
-              │      Cloudflare      │
-              │ Frontend + Functions │
+              │        Render        │
+              │  Next.js web service │
               └──────────┬───────────┘
                          │
           ┌──────────────┴──────────────┐
@@ -56,6 +56,7 @@ npm run dev                  # http://localhost:3000
 
 ```bash
 npm run build   # production build
+npm run start   # run the production server locally
 npm run lint    # lint
 ```
 
@@ -81,54 +82,48 @@ npm run lint    # lint
 2. The `resume_access` table is created automatically on first write. No manual
    migration is required.
 
-### 3. Resume storage
+### 3. Resume file
 
-- **Default:** a bundled, non-public placeholder (`src/lib/resume-asset.ts`) is
-  streamed through the protected route. Replace it with your own file to update
-  the resume.
-- **Cloudflare R2 (recommended for production):**
-  ```bash
-  npx wrangler r2 bucket create portfolio-resume
-  npx wrangler r2 object put portfolio-resume/resume.pdf --file ./your-resume.pdf
-  ```
-  Uncomment the `RESUME_BUCKET` binding in `wrangler.jsonc`. The app detects it
-  automatically and prefers R2 over the bundled asset.
+The resume is bundled as a **server-only** asset (`src/lib/resume-asset.ts`) and
+is only served through the authenticated `/api/resume` route — never as a static
+file. To use your own resume, replace that module (a base64-encoded PDF);
+`scripts/generate_resume.py` can regenerate it.
 
-### 4. Cloudflare (deployment)
+## Deploy to Render
 
-Deployment uses the [OpenNext Cloudflare adapter](https://opennext.js.org/cloudflare)
-(`open-next.config.ts`, `wrangler.jsonc`) — **not** Vercel.
+This repo includes a [`render.yaml`](render.yaml) Blueprint, so deployment is
+declarative — **not** tied to Vercel or Cloudflare.
 
-- Generate binding types: `npm run cf-typegen`
-- Preview the Workers build locally: `npm run preview`
-- Set production secrets (do **not** commit them):
-  ```bash
-  npx wrangler secret put CLERK_SECRET_KEY
-  npx wrangler secret put DATABASE_URL
-  ```
-  `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` can live in `wrangler.jsonc` `vars` or the
-  Cloudflare dashboard.
+1. Push the repo to GitHub.
+2. In the [Render dashboard](https://dashboard.render.com), choose **New + →
+   Blueprint** and select the repository. Render reads `render.yaml` and
+   provisions a Node web service:
+   - Build: `npm ci --include=dev && npm run build`
+   - Start: `npm run start`
+   - Node version: pinned by `.node-version`
+3. When prompted, set the environment variables (used at build **and** runtime,
+   so the Clerk publishable key is correctly inlined):
+   ```
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+   CLERK_SECRET_KEY
+   DATABASE_URL
+   ```
+4. Deploy. Render builds, starts the server, and gives you a `*.onrender.com`
+   URL. Pushes to `main` auto-deploy.
 
-## Deploy
-
-```bash
-npm run deploy   # builds with OpenNext and deploys to Cloudflare Workers
-```
-
-Connect the repository in the Cloudflare dashboard for automatic deployments, or
-run the command from CI.
+> Prefer the dashboard over the Blueprint? Create a **Web Service**, connect the
+> repo, and use the same build/start commands above.
 
 ## Environment Variables
 
 | Variable | Scope | Description |
 | --- | --- | --- |
-| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | client | Clerk publishable key |
+| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | client | Clerk publishable key (inlined at build) |
 | `CLERK_SECRET_KEY` | server | Clerk secret key |
 | `DATABASE_URL` | server | Neon pooled connection string |
-| `RESUME_OBJECT_KEY` | server | R2 object key (optional; default `resume.pdf`) |
 
-`next dev` / `next build` read from `.env.local`; Cloudflare preview/deploy read
-from `.dev.vars` (local) and Wrangler secrets (production). See `.env.example`.
+Locally these come from `.env.local`; on Render, set them under **Environment**.
+See `.env.example`. Never commit real secrets.
 
 ## Security
 
@@ -152,18 +147,18 @@ src/
   lib/
     auth.ts           # Clerk helpers (isolated)
     db.ts             # Neon access layer
-    resume.ts         # resume retrieval (R2 → bundled fallback)
-    resume-asset.ts   # server-only bundled placeholder
+    resume.ts         # serves the bundled resume asset
+    resume-asset.ts   # server-only bundled PDF (base64)
   proxy.ts            # Clerk proxy (does not protect the public site)
-open-next.config.ts   # OpenNext Cloudflare adapter
-wrangler.jsonc        # Cloudflare Workers config
+render.yaml           # Render Blueprint (Node web service)
+.node-version         # pinned Node version for Render
 ```
 
 ## Customizing
 
 - Update the content in `src/data/*` — the UI is driven entirely by these files.
 - Replace the placeholder `#` links in `src/data/site.ts` (GitHub, LinkedIn) and
-  swap the resume (bundled asset or R2).
+  swap the bundled resume asset.
 - Accent colors, typography, and motion tokens live at the top of
   `src/app/globals.css`.
 
