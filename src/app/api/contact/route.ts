@@ -47,10 +47,16 @@ export async function POST(request: NextRequest) {
     );
   }
 
+  const emailConfigured = isEmailConfigured();
   const stored = await recordContactMessage({ name, email, message });
-  const emailed = isEmailConfigured()
+  const emailed = emailConfigured
     ? await sendContactEmail({ name, email, message })
     : false;
+
+  // Visible in Render logs so email delivery can be verified/diagnosed.
+  console.log(
+    `[contact] stored=${stored} emailConfigured=${emailConfigured} emailed=${emailed}`
+  );
 
   if (emailed || stored) return NextResponse.json({ ok: true });
 

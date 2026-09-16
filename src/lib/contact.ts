@@ -45,8 +45,14 @@ export async function sendContactEmail({
         text: `Name: ${name}\nEmail: ${email}\n\n${message}`,
       }),
     });
-    return res.ok;
-  } catch {
+    if (!res.ok) {
+      const detail = await res.text().catch(() => "");
+      console.error(`[contact] Resend send failed (${res.status}): ${detail}`);
+      return false;
+    }
+    return true;
+  } catch (err) {
+    console.error("[contact] Resend request error", err);
     return false;
   }
 }
