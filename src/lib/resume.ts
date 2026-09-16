@@ -1,5 +1,5 @@
 // Server-only resume retrieval. The resume is bundled as a non-public asset and
-// is only ever returned through the authenticated /api/resume route — it is
+// is only ever returned through the authenticated /api/resume route; it is
 // never served as a static file.
 import {
   RESUME_BASE64,

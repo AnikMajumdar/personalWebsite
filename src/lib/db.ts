@@ -30,7 +30,7 @@ async function ensureSchema(sql: Sql): Promise<void> {
 }
 
 /**
- * Record an authenticated resume access. Never throws — failures are logged
+ * Record an authenticated resume access. Never throws; failures are logged
  * without sensitive detail so they can't break the download flow.
  */
 export async function recordResumeAccess(clerkUserId: string): Promise<void> {

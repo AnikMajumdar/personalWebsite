@@ -20,7 +20,7 @@ export function ExperienceTimeline() {
         <SectionHeading
           eyebrow="Experience"
           title="A timeline of building and shipping."
-          description="Where I've built production-facing software — from distributed ground systems at Turion Space to a computer-vision platform used by UC Davis coaches."
+          description="Where I've built production-facing software, from distributed ground systems at Turion Space to a computer-vision platform used by UC Davis coaches."
         />
 
         <div ref={ref} className="relative mt-16 pl-8 sm:pl-10">

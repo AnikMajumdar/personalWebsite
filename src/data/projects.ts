@@ -99,7 +99,7 @@ export const projects: Project[] = [
     tagline:
       "Optimized flight routes across 85,000+ airports, with geospatial search and an AI copilot.",
     description:
-      "A full-stack flight route optimization platform that combines geospatial search, weather, and machine learning to plan routes — with a Gemini-powered RAG copilot for route-specific explanations and decision support.",
+      "A full-stack flight route optimization platform that combines geospatial search, weather, and machine learning to plan routes, with a Gemini-powered RAG copilot for route-specific explanations and decision support.",
     categories: ["Backend", "Full Stack", "AI/ML", "Data"],
     stack: [
       "Next.js",

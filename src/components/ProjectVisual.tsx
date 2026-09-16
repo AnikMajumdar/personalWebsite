@@ -9,7 +9,7 @@ interface ProjectVisualProps {
 }
 
 /**
- * Abstract, generated visuals per project — no stock imagery. Each motif is a
+ * Abstract, generated visuals per project. No stock imagery. Each motif is a
  * lightweight SVG keyed to the project's accent gradient. Motion is subtle and
  * disabled under prefers-reduced-motion via global CSS.
  */

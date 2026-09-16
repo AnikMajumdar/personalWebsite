@@ -17,7 +17,7 @@ export const experience: Experience[] = [
     id: "turion",
     role: "Software Engineering Intern",
     org: "Turion Space",
-    period: "Jun 2026 — Sep 2026",
+    period: "Jun 2026 - Sep 2026",
     kind: "work",
     summary:
       "Designed and built production-facing distributed ground software for spacecraft command, telemetry, and real-time data workflows.",
@@ -43,7 +43,7 @@ export const experience: Experience[] = [
     id: "xiphi",
     role: "Software Engineering Intern",
     org: "Xiphi.ai",
-    period: "Jul 2025 — Sep 2025",
+    period: "Jul 2025 - Sep 2025",
     kind: "work",
     summary:
       "Built a graph-based recommendation engine and backend data pipelines for an events platform.",

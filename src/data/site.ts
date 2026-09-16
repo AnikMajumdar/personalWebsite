@@ -14,7 +14,7 @@ export interface SocialLink {
 }
 
 /**
- * Central site configuration. Professional identity only — no private contact
+ * Central site configuration. Professional identity only. No private contact
  * information (phone, email, address). The resume stays behind Clerk auth.
  */
 export const siteConfig = {
@@ -23,7 +23,7 @@ export const siteConfig = {
   subrole: "Computer Science · UC Davis",
   tagline: "Building intelligent software and scalable systems.",
   heroDescription:
-    "Computer Science student at UC Davis building across backend systems, AI/ML, and full-stack applications — from distributed systems to computer vision and geospatial AI.",
+    "Computer Science student at UC Davis building across backend systems, AI/ML, and full-stack applications, from distributed systems to computer vision and geospatial AI.",
   resumeUrl: "#resume",
 
   nav: [
@@ -49,7 +49,7 @@ export const siteConfig = {
     statement:
       "Software engineering at the intersection of backend systems, AI/ML, and real-world applications.",
     detail:
-      "I'm a Computer Science student at UC Davis focused on building production software across backend systems, AI/ML, and full-stack applications. My projects span computer vision, geospatial optimization, recommendation systems, distributed systems, and AI-powered applications.",
+      "I'm a Computer Science student at UC Davis focused on building production software across backend systems, AI/ML, and full-stack applications. My projects span computer vision, geospatial optimization, recommendation engines, distributed systems, and AI-powered applications.",
     interests: [
       "Backend Engineering",
       "AI Engineering",

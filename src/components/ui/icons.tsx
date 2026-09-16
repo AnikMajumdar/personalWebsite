@@ -2,7 +2,7 @@ import type { ComponentType, SVGProps } from "react";
 
 export type IconType = ComponentType<SVGProps<SVGSVGElement>>;
 
-/** Abstract constellation brand mark — deliberately non-alphabetic (no initials). */
+/** Abstract constellation brand mark, deliberately non-alphabetic (no initials). */
 export function LogoMark(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>

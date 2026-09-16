@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const title = "Anik Majumdar — Software Engineer";
+const title = "Anik Majumdar · Software Engineer";
 const description =
   "Portfolio of Anik Majumdar, a UC Davis Computer Science student and software engineer building across backend systems, AI/ML, and full-stack applications.";
 
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s · Anik Majumdar",
   },
   description,
-  applicationName: "Anik Majumdar — Portfolio",
+  applicationName: "Anik Majumdar · Portfolio",
   keywords: [
     "Software Engineer",
     "AI",

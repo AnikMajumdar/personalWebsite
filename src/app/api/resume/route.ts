@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 
 /**
  * Protected resume endpoint. Authorization is enforced server-side against the
- * Clerk session — knowing this URL is not sufficient to retrieve the file.
+ * Clerk session; knowing this URL is not sufficient to retrieve the file.
  */
 export async function GET(request: NextRequest) {
   if (!isClerkConfigured()) {

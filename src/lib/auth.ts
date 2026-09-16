@@ -1,5 +1,5 @@
 // Server-only auth helpers. Isolates Clerk so the rest of the app depends on a
-// small, stable surface. The public site never requires authentication — only
+// small, stable surface. The public site never requires authentication; only
 // the protected resume endpoint calls into these functions.
 import { auth } from "@clerk/nextjs/server";
 

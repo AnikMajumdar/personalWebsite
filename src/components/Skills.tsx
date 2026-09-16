@@ -69,7 +69,7 @@ export function Skills() {
         <SectionHeading
           eyebrow="Capabilities"
           title="A toolkit spanning the full stack."
-          description="From model training to production infrastructure — the technologies I use to design, build, and ship reliable software."
+          description="From model training to production infrastructure: the technologies I use to design, build, and ship reliable software."
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

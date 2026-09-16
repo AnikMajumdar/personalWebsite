@@ -38,7 +38,7 @@ export function Projects() {
         <SectionHeading
           eyebrow="Selected Work"
           title="Two products, built end to end."
-          description="CourtCheck and AeroRoute span the range of my engineering — computer vision and full-stack on one side; backend, geospatial systems, and applied AI on the other."
+          description="CourtCheck and AeroRoute span the range of my engineering: computer vision and full-stack on one side; backend, geospatial systems, and applied AI on the other."
         />
 
         {/* Featured deep-dives */}

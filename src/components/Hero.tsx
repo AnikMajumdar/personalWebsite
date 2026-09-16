@@ -64,7 +64,7 @@ export function Hero() {
         >
           <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/15 px-2 py-0.5 text-xs font-medium text-accent-soft">
             <Sparkles className="h-3 w-3" />
-            Open to opportunities
+            Open to Summer 2027 Internships
           </span>
           <span className="hidden sm:inline">Software Engineer · CS @ UC Davis</span>
           <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

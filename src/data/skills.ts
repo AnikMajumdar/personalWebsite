@@ -3,7 +3,6 @@ import {
   Code2,
   Server,
   BrainCircuit,
-  MonitorSmartphone,
   Database,
   Boxes,
 } from "lucide-react";
@@ -30,13 +29,11 @@ export const skillGroups: SkillGroup[] = [
     icon: Code2,
     accent: "#7c8cff",
     skills: [
-      { name: "Python", level: 95 },
-      { name: "Go", level: 88 },
-      { name: "TypeScript", level: 86 },
-      { name: "JavaScript", level: 82 },
-      { name: "SQL", level: 85 },
-      { name: "C++", level: 74 },
-      { name: "Java", level: 74 },
+      { name: "Python", level: 90 },
+      { name: "C++", level: 80 },
+      { name: "JavaScript", level: 70 },
+      { name: "Java", level: 70 },
+      { name: "Go", level: 50 },
     ],
   },
   {
@@ -68,20 +65,6 @@ export const skillGroups: SkillGroup[] = [
       { name: "NumPy", level: 86 },
       { name: "OpenAI API", level: 84 },
       { name: "Gemini API", level: 82 },
-    ],
-  },
-  {
-    id: "frontend",
-    title: "Frontend",
-    blurb: "Type-safe, polished product interfaces.",
-    icon: MonitorSmartphone,
-    accent: "#5fd6e6",
-    skills: [
-      { name: "React", level: 90 },
-      { name: "Next.js", level: 90 },
-      { name: "TypeScript", level: 86 },
-      { name: "JavaScript", level: 82 },
-      { name: "HTML / CSS", level: 85 },
     ],
   },
   {
