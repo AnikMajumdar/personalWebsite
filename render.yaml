@@ -1,0 +1,29 @@
+# Render Blueprint — https://render.com/docs/blueprint-spec
+#
+# To deploy: push to GitHub, then in the Render dashboard choose
+# "New +" → "Blueprint" and select this repository. Render reads this file,
+# creates the web service, and prompts for the secret values below.
+#
+# The Node runtime fully supports Next.js (build + `next start`), Clerk
+# middleware, and server-side rendering — no adapter required.
+services:
+  - type: web
+    name: personal-website
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+    # --include=dev ensures build tooling (TypeScript, Tailwind) is installed
+    # even though Render sets NODE_ENV=production.
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm run start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      # Set real values in the Render dashboard — never commit them.
+      - key: NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
