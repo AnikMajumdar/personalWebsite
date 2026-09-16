@@ -1,8 +1,8 @@
 "use client";
 
-import { Download, Eye, FileText } from "lucide-react";
-import { siteConfig } from "@/data/site";
+import { FileText } from "lucide-react";
 import { Reveal } from "./ui/Reveal";
+import { ResumeAccess } from "./ResumeAccess";
 
 const previewSections = [
   { title: "Experience", rows: [92, 78, 64] },
@@ -33,24 +33,8 @@ export function Resume() {
             </Reveal>
 
             <Reveal delay={0.15}>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href={siteConfig.resumeUrl}
-                  download
-                  className="btn-primary inline-flex h-12 items-center gap-2 rounded-full px-7 text-sm"
-                >
-                  <Download className="h-4 w-4" />
-                  Download Resume
-                </a>
-                <a
-                  href={siteConfig.resumeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center gap-2 rounded-full border border-border bg-white/[0.03] px-7 text-sm font-medium text-foreground transition-colors hover:border-border-strong hover:bg-white/[0.06]"
-                >
-                  <Eye className="h-4 w-4 text-muted" />
-                  View Resume
-                </a>
+              <div className="mt-8">
+                <ResumeAccess />
               </div>
             </Reveal>
 

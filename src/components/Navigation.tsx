@@ -119,9 +119,7 @@ export function Navigation() {
 
           {/* Desktop CTA */}
           <a
-            href={siteConfig.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#resume"
             className="hidden items-center gap-1.5 rounded-full border border-border bg-white/[0.03] px-4 py-1.5 text-sm font-medium text-foreground transition-colors duration-300 hover:border-border-strong hover:bg-white/[0.06] md:inline-flex"
           >
             Resume

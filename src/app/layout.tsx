@@ -1,7 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
+import { clerkAppearance } from "@/lib/clerk-appearance";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,6 +61,9 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  const clerkEnabled = !!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  const tree = <Providers>{children}</Providers>;
+
   return (
     <html
       lang="en"
@@ -71,7 +76,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           Skip to content
         </a>
-        <Providers>{children}</Providers>
+        {clerkEnabled ? (
+          <ClerkProvider appearance={clerkAppearance}>{tree}</ClerkProvider>
+        ) : (
+          tree
+        )}
       </body>
     </html>
   );

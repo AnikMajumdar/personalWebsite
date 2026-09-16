@@ -98,9 +98,7 @@ export function Hero() {
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
           <a
-            href={siteConfig.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#resume"
             className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-border bg-white/[0.03] px-7 text-sm font-medium text-foreground backdrop-blur-sm transition-colors hover:border-border-strong hover:bg-white/[0.06]"
           >
             View Resume

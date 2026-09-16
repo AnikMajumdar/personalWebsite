@@ -23,7 +23,7 @@ export const siteConfig = {
   tagline: "Building intelligent software for the future.",
   heroDescription:
     "I design and build AI/ML systems, resilient backend services, and polished full-stack products — turning hard technical problems into fast, reliable software.",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "#resume",
 
   nav: [
     { label: "Home", href: "#home", id: "home" },
@@ -37,7 +37,7 @@ export const siteConfig = {
   socials: [
     { label: "GitHub", href: "#", icon: GithubIcon },
     { label: "LinkedIn", href: "#", icon: LinkedinIcon },
-    { label: "Resume", href: "/resume.pdf", icon: FileText },
+    { label: "Resume", href: "#resume", icon: FileText },
   ] satisfies SocialLink[],
 
   about: {
