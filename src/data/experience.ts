@@ -14,6 +14,21 @@ export interface Experience {
 
 export const experience: Experience[] = [
   {
+    id: "asa",
+    role: "Software Engineer & Project Manager",
+    org: "UC Davis Aggie Sports Analytics",
+    period: "Present",
+    kind: "work",
+    summary:
+      "Engineering and project leadership on CourtCheck, a tennis analytics platform for the UC Davis women's tennis program.",
+    achievements: [
+      "Contribute full-stack, backend/database, deployment, and ML/CV pipeline work to an established production project.",
+      "Built GPT-based automated scouting-report generation on top of the processed match analytics.",
+      "Hold project-management responsibilities within the organization.",
+    ],
+    stack: ["Python", "FastAPI", "Next.js", "Supabase", "PyTorch", "Modal"],
+  },
+  {
     id: "turion",
     role: "Software Engineering Intern",
     org: "Turion Space",
@@ -40,6 +55,16 @@ export const experience: Experience[] = [
     metric: { value: "25%", label: "Payload reduction" },
   },
   {
+    id: "include-fullstack",
+    role: "Full Stack Developer",
+    org: "#include Davis",
+    period: "Sep 2025 - Jun 2026",
+    kind: "work",
+    summary: "Built a marketplace platform for engineers.",
+    achievements: [],
+    stack: [],
+  },
+  {
     id: "xiphi",
     role: "Software Engineering Intern",
     org: "Xiphi.ai",
@@ -56,19 +81,39 @@ export const experience: Experience[] = [
     metric: { value: "10%", label: "Lower latency" },
   },
   {
-    id: "asa",
-    role: "Software Engineer & Project Manager",
-    org: "UC Davis Aggie Sports Analytics",
-    period: "Present",
+    id: "include-frontend",
+    role: "Frontend Developer",
+    org: "#include Davis",
+    period: "Jan 2025 - Sep 2025",
+    kind: "work",
+    summary: "Created the Aggie Pier Mentoring platform.",
+    achievements: [],
+    stack: [],
+  },
+  {
+    id: "ekadence",
+    role: "Intern",
+    org: "eKadence",
+    period: "Jun 2022 - Aug 2022",
+    kind: "work",
+    summary: "Researched, designed, developed, and tested new product ideas.",
+    achievements: [
+      "Created a calendar filter, a To-Do widget, and a hypothetical grader, allowing students to create hypothetical assignments to determine the impact on their grades.",
+    ],
+    stack: [],
+  },
+  {
+    id: "osi-digital",
+    role: "Intern",
+    org: "OSI Digital",
+    period: "Jun 2021 - Aug 2021",
     kind: "work",
     summary:
-      "Engineering and project leadership on CourtCheck, a tennis analytics platform for the UC Davis women's tennis program.",
+      "Developed integrations between enterprise business systems using Postman and Dell Boomi, streamlining data exchange and automation.",
     achievements: [
-      "Contribute full-stack, backend/database, deployment, and ML/CV pipeline work to an established production project.",
-      "Built GPT-based automated scouting-report generation on top of the processed match analytics.",
-      "Hold project-management responsibilities within the organization.",
+      "Performed API development and testing, improving system interoperability and reducing manual data processing.",
     ],
-    stack: ["Python", "FastAPI", "Next.js", "Supabase", "PyTorch", "Modal"],
+    stack: ["Postman", "Dell Boomi"],
   },
   {
     id: "education",
