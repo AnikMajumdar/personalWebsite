@@ -43,3 +43,40 @@ export async function recordResumeAccess(clerkUserId: string): Promise<void> {
     console.error("[db] failed to record resume access");
   }
 }
+
+let contactSchemaReady = false;
+
+async function ensureContactSchema(sql: Sql): Promise<void> {
+  if (contactSchemaReady) return;
+  await sql`
+    CREATE TABLE IF NOT EXISTS contact_messages (
+      id BIGSERIAL PRIMARY KEY,
+      name TEXT NOT NULL,
+      email TEXT NOT NULL,
+      message TEXT NOT NULL,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+    )
+  `;
+  contactSchemaReady = true;
+}
+
+/** Persist a contact-form submission. Never throws; returns whether it saved. */
+export async function recordContactMessage(input: {
+  name: string;
+  email: string;
+  message: string;
+}): Promise<boolean> {
+  try {
+    const sql = getSql();
+    if (!sql) return false;
+    await ensureContactSchema(sql);
+    await sql`
+      INSERT INTO contact_messages (name, email, message)
+      VALUES (${input.name}, ${input.email}, ${input.message})
+    `;
+    return true;
+  } catch {
+    console.error("[db] failed to record contact message");
+    return false;
+  }
+}

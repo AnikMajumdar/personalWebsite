@@ -6,6 +6,7 @@ import { ExperienceTimeline } from "@/components/ExperienceTimeline";
 import { Skills } from "@/components/Skills";
 import { About } from "@/components/About";
 import { Resume } from "@/components/Resume";
+import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <Skills />
         <About />
         <Resume />
+        <Contact />
       </main>
       <Footer />
     </>
