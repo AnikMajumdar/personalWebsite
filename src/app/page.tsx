@@ -1,6 +1,7 @@
 import { BackgroundEffects } from "@/components/BackgroundEffects";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
+import { Projects } from "@/components/Projects";
 
 export default function Home() {
   return (
@@ -9,8 +10,8 @@ export default function Home() {
       <Navigation />
       <main id="main">
         <Hero />
+        <Projects />
         {/* Sections added incrementally */}
-        <section id="projects" className="min-h-screen scroll-mt-24" />
         <section id="experience" className="min-h-screen scroll-mt-24" />
         <section id="skills" className="min-h-screen scroll-mt-24" />
         <section id="resume" className="min-h-screen scroll-mt-24" />
