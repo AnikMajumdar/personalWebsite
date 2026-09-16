@@ -1,6 +1,7 @@
 "use client";
 
 import { FileText } from "lucide-react";
+import { siteConfig } from "@/data/site";
 import { Reveal } from "./ui/Reveal";
 import { ResumeAccess } from "./ResumeAccess";
 
@@ -27,8 +28,8 @@ export function Resume() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mt-5 max-w-lg text-lead text-muted">
-                A concise overview of my experience, projects, and technical
-                depth — formatted for a quick read.
+                Experience, projects, and technical depth in one place. Click
+                through to read the full document.
               </p>
             </Reveal>
 
@@ -55,9 +56,11 @@ export function Resume() {
                 <div className="flex items-center justify-between rounded-xl bg-[linear-gradient(120deg,rgba(124,140,255,0.16),rgba(177,140,255,0.1))] p-5">
                   <div>
                     <div className="text-lg font-semibold text-foreground">
-                      Software Engineer
+                      {siteConfig.name}
                     </div>
-                    <div className="mt-1 h-2 w-28 rounded-full bg-white/15" />
+                    <div className="mt-1 text-xs text-muted">
+                      {siteConfig.role}
+                    </div>
                   </div>
                   <div className="grid h-11 w-11 place-items-center rounded-xl border border-border bg-background/40">
                     <FileText className="h-5 w-5 text-accent-soft" />

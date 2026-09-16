@@ -2,14 +2,7 @@
 
 import { useState } from "react";
 import { SignInButton, useAuth } from "@clerk/nextjs";
-import {
-  Lock,
-  Download,
-  ArrowUpRight,
-  ShieldCheck,
-  Loader2,
-  AlertCircle,
-} from "lucide-react";
+import { Download, ArrowUpRight, Loader2, AlertCircle } from "lucide-react";
 
 const clerkEnabled = !!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
@@ -88,14 +81,13 @@ function AuthedAccess() {
               type="button"
               className="btn-primary inline-flex h-12 items-center gap-2 rounded-full px-7 text-sm"
             >
-              <Lock className="h-4 w-4" />
               View Resume
+              <ArrowUpRight className="h-4 w-4" />
             </button>
           </SignInButton>
         </div>
-        <p className="mt-4 flex items-center gap-2 text-sm text-muted">
-          <ShieldCheck className="h-4 w-4 text-accent-soft" />
-          Sign in to access the resume — secured with Clerk.
+        <p className="mt-4 text-sm text-muted">
+          Opens in a new tab after a quick sign-in.
         </p>
       </div>
     );
@@ -132,10 +124,7 @@ function AuthedAccess() {
         </button>
       </div>
 
-      <p className="mt-4 flex items-center gap-2 text-sm text-muted">
-        <ShieldCheck className="h-4 w-4 text-cyan" />
-        You&rsquo;re authenticated. Opens in a new tab.
-      </p>
+      <p className="mt-4 text-sm text-muted">Opens in a new tab.</p>
 
       {error && (
         <p
@@ -164,13 +153,12 @@ function UnconfiguredAccess() {
           onClick={() => setShown(true)}
           className="btn-primary inline-flex h-12 items-center gap-2 rounded-full px-7 text-sm"
         >
-          <Lock className="h-4 w-4" />
           View Resume
+          <ArrowUpRight className="h-4 w-4" />
         </button>
       </div>
-      <p className="mt-4 flex items-center gap-2 text-sm text-muted">
-        <ShieldCheck className="h-4 w-4 text-accent-soft" />
-        Protected — sign-in required to access the resume.
+      <p className="mt-4 text-sm text-muted">
+        Opens in a new tab after a quick sign-in.
       </p>
       {shown && (
         <p
