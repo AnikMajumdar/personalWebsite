@@ -2,6 +2,24 @@ import type { ComponentType, SVGProps } from "react";
 
 export type IconType = ComponentType<SVGProps<SVGSVGElement>>;
 
+/** Abstract constellation brand mark — deliberately non-alphabetic (no initials). */
+export function LogoMark(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M7 7.5l9.5 3.5M7 7.5l2 9M16.5 11l-7.5 5.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="7" cy="7.5" r="2" fill="currentColor" />
+      <circle cx="16.5" cy="11" r="2" fill="currentColor" />
+      <circle cx="9" cy="16.5" r="2" fill="currentColor" />
+    </svg>
+  );
+}
+
 /** GitHub brand mark (lucide removed brand icons in recent versions). */
 export function GithubIcon(props: SVGProps<SVGSVGElement>) {
   return (

@@ -10,6 +10,7 @@ import {
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import { useActiveSection, useScrolled } from "@/lib/hooks";
+import { LogoMark } from "./ui/icons";
 import { cn } from "@/lib/utils";
 
 const sectionIds = siteConfig.nav.map((n) => n.id);
@@ -22,15 +23,7 @@ function Logo() {
       className="group flex items-center gap-2.5"
     >
       <span className="relative grid h-8 w-8 place-items-center overflow-hidden rounded-[10px] bg-[linear-gradient(135deg,#8b97ff,#6f7bff_45%,#b18cff)] shadow-[0_6px_18px_-6px_rgba(111,123,255,0.8)]">
-        <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#0a0a12]" fill="none">
-          <path
-            d="M6 17L11 7M13 7l5 10M8.5 13h7"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <LogoMark className="h-4 w-4 text-[#0a0a12]" />
       </span>
       <span className="hidden font-mono text-[13px] font-medium tracking-tight text-foreground/90 sm:block">
         portfolio<span className="text-accent">.</span>

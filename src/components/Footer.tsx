@@ -1,5 +1,6 @@
 import { ArrowUp } from "lucide-react";
 import { siteConfig } from "@/data/site";
+import { LogoMark } from "./ui/icons";
 
 const footerLinks = siteConfig.nav.filter((n) => n.id !== "home");
 
@@ -13,15 +14,7 @@ export function Footer() {
           <div className="max-w-sm">
             <a href="#home" className="flex items-center gap-2.5" aria-label="Home">
               <span className="grid h-8 w-8 place-items-center rounded-[10px] bg-[linear-gradient(135deg,#8b97ff,#6f7bff_45%,#b18cff)]">
-                <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#0a0a12]" fill="none">
-                  <path
-                    d="M6 17L11 7M13 7l5 10M8.5 13h7"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <LogoMark className="h-4 w-4 text-[#0a0a12]" />
               </span>
               <span className="font-mono text-sm font-medium text-foreground/90">
                 portfolio<span className="text-accent">.</span>
