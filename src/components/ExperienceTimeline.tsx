@@ -14,9 +14,6 @@ export function ExperienceTimeline() {
     offset: ["start 0.85", "end 0.6"],
   });
 
-  const main = experience.filter((e) => !e.earlier);
-  const earlier = experience.filter((e) => e.earlier);
-
   return (
     <section id="experience" className="scroll-mt-24 py-24 sm:py-32">
       <div className="container-page">
@@ -35,7 +32,7 @@ export function ExperienceTimeline() {
           />
 
           <div className="space-y-10">
-            {main.map((item, i) => {
+            {experience.map((item, i) => {
               const Icon = item.kind === "education" ? GraduationCap : Briefcase;
               return (
                 <Reveal key={item.id} delay={i * 0.04} y={26}>
@@ -105,27 +102,6 @@ export function ExperienceTimeline() {
             })}
           </div>
         </div>
-
-        {earlier.length > 0 && (
-          <div className="mt-12">
-            <p className="text-eyebrow text-[10px] text-faint">
-              Earlier Experience
-            </p>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              {earlier.map((item) => (
-                <div key={item.id} className="surface-card rounded-2xl p-5">
-                  <span className="font-mono text-xs text-accent-soft">
-                    {item.period}
-                  </span>
-                  <h3 className="mt-2 text-base font-semibold tracking-tight text-foreground">
-                    {item.role}
-                  </h3>
-                  <p className="mt-0.5 text-sm text-muted">{item.org}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );

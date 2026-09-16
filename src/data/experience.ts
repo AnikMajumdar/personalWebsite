@@ -10,7 +10,6 @@ export interface Experience {
   achievements: string[];
   stack: string[];
   metric?: { value: string; label: string };
-  earlier?: boolean;
 }
 
 export const experience: Experience[] = [
@@ -56,16 +55,6 @@ export const experience: Experience[] = [
     metric: { value: "25%", label: "Payload reduction" },
   },
   {
-    id: "include-fullstack",
-    role: "Full Stack Developer",
-    org: "#include Davis",
-    period: "Sep 2025 - Jun 2026",
-    kind: "work",
-    summary: "Built a marketplace platform for engineers.",
-    achievements: [],
-    stack: [],
-  },
-  {
     id: "xiphi",
     role: "Software Engineering Intern",
     org: "Xiphi.ai",
@@ -80,43 +69,6 @@ export const experience: Experience[] = [
     ],
     stack: ["Python", "FastAPI", "Neo4j", "PostgreSQL"],
     metric: { value: "10%", label: "Lower latency" },
-  },
-  {
-    id: "include-frontend",
-    role: "Frontend Developer",
-    org: "#include Davis",
-    period: "Jan 2025 - Sep 2025",
-    kind: "work",
-    summary: "Created the Aggie Pier Mentoring platform.",
-    achievements: [],
-    stack: [],
-  },
-  {
-    id: "ekadence",
-    role: "Intern",
-    org: "eKadence",
-    period: "Jun 2022 - Aug 2022",
-    kind: "work",
-    summary: "Researched, designed, developed, and tested new product ideas.",
-    achievements: [
-      "Created a calendar filter, a To-Do widget, and a hypothetical grader, allowing students to create hypothetical assignments to determine the impact on their grades.",
-    ],
-    stack: [],
-    earlier: true,
-  },
-  {
-    id: "osi-digital",
-    role: "Intern",
-    org: "OSI Digital",
-    period: "Jun 2021 - Aug 2021",
-    kind: "work",
-    summary:
-      "Developed integrations between enterprise business systems using Postman and Dell Boomi, streamlining data exchange and automation.",
-    achievements: [
-      "Performed API development and testing, improving system interoperability and reducing manual data processing.",
-    ],
-    stack: ["Postman", "Dell Boomi"],
-    earlier: true,
   },
   {
     id: "education",
