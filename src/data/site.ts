@@ -42,7 +42,7 @@ export const siteConfig = {
       href: "https://www.linkedin.com/in/anik-maj/",
       icon: LinkedinIcon,
     },
-    { label: "Email", href: "mailto:amaj@ucdavis.edu", icon: Mail },
+    { label: "Email", href: "#contact", icon: Mail },
     { label: "Resume", href: "#resume", icon: FileText },
   ] satisfies SocialLink[],
 
