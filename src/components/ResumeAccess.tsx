@@ -2,9 +2,15 @@
 
 import { useState } from "react";
 import { SignInButton, useAuth } from "@clerk/nextjs";
-import { Download, ArrowUpRight, Loader2, AlertCircle } from "lucide-react";
+import { Download, ArrowUpRight } from "lucide-react";
 
 const clerkEnabled = !!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+
+// Resume hosted on Google Drive. "View" opens the Drive preview; "Download"
+// pulls the file directly. Swap the resume by changing this file id.
+const RESUME_FILE_ID = "1kciqkz_0QoXHBUmAxqEIru9u5c55RxDm";
+const RESUME_VIEW_URL = `https://drive.google.com/file/d/${RESUME_FILE_ID}/view`;
+const RESUME_DOWNLOAD_URL = `https://drive.google.com/uc?export=download&id=${RESUME_FILE_ID}`;
 
 export function ResumeAccess() {
   return clerkEnabled ? <AuthedAccess /> : <UnconfiguredAccess />;
@@ -16,52 +22,6 @@ export function ResumeAccess() {
 
 function AuthedAccess() {
   const { isLoaded, isSignedIn } = useAuth();
-  const [busy, setBusy] = useState<"view" | "download" | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  async function openResume(download: boolean) {
-    setError(null);
-    setBusy(download ? "download" : "view");
-    // Open the tab synchronously (within the gesture) to avoid popup blocking.
-    const win = download ? null : window.open("", "_blank");
-    try {
-      const res = await fetch(`/api/resume${download ? "?download=1" : ""}`, {
-        cache: "no-store",
-      });
-      if (!res.ok) {
-        const data = (await res.json().catch(() => null)) as
-          | { error?: string }
-          | null;
-        throw new Error(
-          data?.error ?? "The resume is temporarily unavailable."
-        );
-      }
-      const url = URL.createObjectURL(await res.blob());
-      if (download) {
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "resume.pdf";
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        setTimeout(() => URL.revokeObjectURL(url), 4000);
-      } else if (win) {
-        win.location.href = url;
-        setTimeout(() => URL.revokeObjectURL(url), 60000);
-      } else {
-        window.open(url, "_blank");
-      }
-    } catch (e) {
-      win?.close();
-      setError(
-        e instanceof Error
-          ? e.message
-          : "Something went wrong. Please try again."
-      );
-    } finally {
-      setBusy(null);
-    }
-  }
 
   if (!isLoaded) {
     return (
@@ -96,45 +56,27 @@ function AuthedAccess() {
   return (
     <div>
       <div className="flex flex-wrap gap-3">
-        <button
-          type="button"
-          onClick={() => openResume(false)}
-          disabled={busy !== null}
-          className="btn-primary inline-flex h-12 items-center gap-2 rounded-full px-7 text-sm disabled:opacity-70"
+        <a
+          href={RESUME_VIEW_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary inline-flex h-12 items-center gap-2 rounded-full px-7 text-sm"
         >
-          {busy === "view" ? (
-            <Loader2 className="h-4 w-4 animate-spin" />
-          ) : (
-            <ArrowUpRight className="h-4 w-4" />
-          )}
           View Resume
-        </button>
-        <button
-          type="button"
-          onClick={() => openResume(true)}
-          disabled={busy !== null}
-          className="inline-flex h-12 items-center gap-2 rounded-full border border-border bg-white/[0.03] px-7 text-sm font-medium text-foreground transition-colors hover:border-border-strong hover:bg-white/[0.06] disabled:opacity-70"
+          <ArrowUpRight className="h-4 w-4" />
+        </a>
+        <a
+          href={RESUME_DOWNLOAD_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex h-12 items-center gap-2 rounded-full border border-border bg-white/[0.03] px-7 text-sm font-medium text-foreground transition-colors hover:border-border-strong hover:bg-white/[0.06]"
         >
-          {busy === "download" ? (
-            <Loader2 className="h-4 w-4 animate-spin text-muted" />
-          ) : (
-            <Download className="h-4 w-4 text-muted" />
-          )}
+          <Download className="h-4 w-4 text-muted" />
           Download
-        </button>
+        </a>
       </div>
 
       <p className="mt-4 text-sm text-muted">Opens in a new tab.</p>
-
-      {error && (
-        <p
-          role="alert"
-          className="mt-3 flex items-center gap-2 text-sm text-[#ff8f8f]"
-        >
-          <AlertCircle className="h-4 w-4" />
-          {error}
-        </p>
-      )}
     </div>
   );
 }
