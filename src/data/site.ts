@@ -19,10 +19,10 @@ export interface SocialLink {
  */
 export const siteConfig = {
   role: "Software Engineer",
-  subrole: "CS Student",
+  subrole: "Computer Science · UC Davis",
   tagline: "Building intelligent software for the future.",
   heroDescription:
-    "I design and build AI/ML systems, resilient backend services, and polished full-stack products — turning hard technical problems into fast, reliable software.",
+    "I'm a UC Davis Computer Science student building software at the intersection of AI and systems — production-facing backends, full-stack products, and computer-vision and machine-learning pipelines.",
   resumeUrl: "#resume",
 
   nav: [
@@ -42,15 +42,15 @@ export const siteConfig = {
 
   about: {
     statement:
-      "Software engineer focused on building scalable systems, intelligent applications, and polished user experiences.",
+      "I build intelligent, scalable software across the boundary between sophisticated backend systems and AI-powered applications.",
     detail:
-      "I care about the full lifecycle of a product — from the data pipelines and inference services that power it, to the interface that makes it feel effortless. I gravitate toward problems at the intersection of machine learning and systems engineering.",
+      "I'm a Computer Science student at UC Davis focused on production-oriented engineering — distributed backends, APIs, real-time data, and applied AI. My work spans computer-vision and machine-learning pipelines, full-stack products, and the infrastructure that ships them to real users.",
     interests: [
+      "Backend Engineering",
       "AI Engineering",
-      "Backend Systems",
       "Full-Stack Development",
       "Computer Vision",
-      "Developer Infrastructure",
+      "Distributed Systems",
     ],
   },
 } as const;

@@ -12,82 +12,57 @@ export interface Experience {
 }
 
 /**
- * Experience timeline. Organizations are described generically to avoid
- * exposing identifying details.
+ * Experience timeline. Dates for Turion Space were not supplied — the period
+ * label is a placeholder to replace with a real date range.
  */
 export const experience: Experience[] = [
   {
-    id: "ai-infra",
-    role: "Software Engineer",
-    org: "AI Infrastructure Startup",
-    period: "2025 — Present",
+    id: "turion",
+    role: "Software Engineering Intern",
+    org: "Turion Space",
+    period: "Internship",
     kind: "work",
     summary:
-      "Building the serving and tooling layer for large-scale machine-learning inference.",
+      "Built and debugged production-facing distributed ground software for spacecraft command, telemetry, and data workflows.",
     achievements: [
-      "Designed an LLM inference gateway with adaptive routing that cut token spend by 40%.",
-      "Shipped streaming guardrails and a semantic cache serving 1.2k requests per second.",
-      "Established load-testing and observability standards adopted across the platform.",
+      "Developed command-and-telemetry infrastructure using Go microservices, processing real-time telemetry over UDP networking.",
+      "Built a Flask REST image-retrieval API that reduced oversized raw UDP JSON payloads by ~25%.",
+      "Validated and debugged Kubernetes deployments using Python, Bash, Docker, and Kubernetes.",
     ],
-    stack: ["Python", "FastAPI", "LLMs", "Redis", "Kubernetes", "gRPC"],
+    stack: [
+      "Go",
+      "Python",
+      "gRPC",
+      "Protocol Buffers",
+      "NATS",
+      "Kubernetes",
+      "Docker",
+      "Flask",
+    ],
   },
   {
-    id: "backend-platform",
-    role: "Backend Engineer",
-    org: "Cloud Platform Team",
-    period: "2024 — 2025",
+    id: "asa",
+    role: "Software Engineer & Project Manager",
+    org: "UC Davis Aggie Sports Analytics",
+    period: "Present",
     kind: "work",
     summary:
-      "Owned distributed services powering asynchronous workloads across the fleet.",
+      "Engineering and project leadership on CourtCheck, a tennis analytics platform for the UC Davis women's tennis program.",
     achievements: [
-      "Built a Raft-backed job orchestrator delivering exactly-once execution at 2M+ jobs/day.",
-      "Reduced tail latency 35% by redesigning the queue sharding strategy.",
-      "Led migration to gRPC, standardizing typed contracts across teams.",
+      "Contributed full-stack, backend/database, deployment, and ML/CV pipeline work to an established production project.",
+      "Built GPT-based automated scouting-report generation on top of the processed match analytics.",
+      "Hold project-management responsibilities within the organization.",
     ],
-    stack: ["Go", "gRPC", "PostgreSQL", "Kubernetes", "Docker"],
-  },
-  {
-    id: "cv-research",
-    role: "Machine Learning Engineer",
-    org: "Computer Vision Lab",
-    period: "2023 — 2024",
-    kind: "work",
-    summary:
-      "Researched and productionized real-time perception models for streaming video.",
-    achievements: [
-      "Fused detection, tracking, and segmentation models into one low-latency pipeline.",
-      "Achieved sub-30ms inference via dynamic GPU batching and ONNX compilation.",
-      "Authored the internal labeling studio that tripled dataset throughput.",
-    ],
-    stack: ["Python", "PyTorch", "OpenCV", "ONNX", "CUDA"],
-  },
-  {
-    id: "fullstack",
-    role: "Full-Stack Developer",
-    org: "Developer Tools Startup",
-    period: "2022 — 2023",
-    kind: "work",
-    summary:
-      "Delivered end-to-end analytics products from data model to interface.",
-    achievements: [
-      "Built streaming analytics dashboards over 200M+ events with a 95+ Lighthouse score.",
-      "Designed a typed, composable query builder used across the product.",
-      "Introduced a component system that accelerated feature delivery.",
-    ],
-    stack: ["Next.js", "React", "TypeScript", "ClickHouse", "Supabase"],
+    stack: ["Python", "FastAPI", "Next.js", "Supabase", "PyTorch", "Modal"],
   },
   {
     id: "education",
     role: "B.S. Computer Science",
-    org: "University",
-    period: "2021 — 2025",
+    org: "University of California, Davis",
+    period: "Expected Dec 2027",
     kind: "education",
-    summary:
-      "Focused on machine learning, distributed systems, and algorithms.",
-    achievements: [
-      "Coursework across ML, computer vision, operating systems, and databases.",
-      "Teaching assistant for data structures and systems programming.",
-    ],
-    stack: ["Algorithms", "Machine Learning", "Systems", "Databases"],
+    summary: "Focused on software engineering, AI / ML, and systems.",
+    achievements: [],
+    stack: [],
   },
 ];
