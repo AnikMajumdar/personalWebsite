@@ -9,25 +9,22 @@ export interface Experience {
   summary: string;
   achievements: string[];
   stack: string[];
+  metric?: { value: string; label: string };
 }
 
-/**
- * Experience timeline. Dates for Turion Space were not supplied — the period
- * label is a placeholder to replace with a real date range.
- */
 export const experience: Experience[] = [
   {
     id: "turion",
     role: "Software Engineering Intern",
     org: "Turion Space",
-    period: "Internship",
+    period: "Jun 2026 — Sep 2026",
     kind: "work",
     summary:
-      "Built and debugged production-facing distributed ground software for spacecraft command, telemetry, and data workflows.",
+      "Designed and built production-facing distributed ground software for spacecraft command, telemetry, and real-time data workflows.",
     achievements: [
-      "Developed command-and-telemetry infrastructure using Go microservices, processing real-time telemetry over UDP networking.",
-      "Built a Flask REST image-retrieval API that reduced oversized raw UDP JSON payloads by ~25%.",
-      "Validated and debugged Kubernetes deployments using Python, Bash, Docker, and Kubernetes.",
+      "Implemented an end-to-end command-and-telemetry pipeline across a distributed Go microservice architecture with UDP communication and real-time processing.",
+      "Built a real-time image-retrieval feature (Flask + REST) that returns captured images in a single API request, reducing payload size by 25%.",
+      "Developed automated validation and debugging workflows across Kubernetes clusters (Python, Bash, Docker) to verify command routing, telemetry ingestion, and service health.",
     ],
     stack: [
       "Go",
@@ -38,7 +35,25 @@ export const experience: Experience[] = [
       "Kubernetes",
       "Docker",
       "Flask",
+      "Bash",
     ],
+    metric: { value: "25%", label: "Payload reduction" },
+  },
+  {
+    id: "xiphi",
+    role: "Software Engineering Intern",
+    org: "Xiphi.ai",
+    period: "Jul 2025 — Sep 2025",
+    kind: "work",
+    summary:
+      "Built a graph-based recommendation engine and backend data pipelines for an events platform.",
+    achievements: [
+      "Developed a graph-based recommendation engine generating personalized recommendations for sessions, booths, exhibitors, and attendee discovery.",
+      "Built ETL pipelines ingesting users, interests, sessions, booths, and interactions from PostgreSQL into Neo4j, modeled for Cypher traversal and ranking.",
+      "Implemented asynchronous FastAPI endpoints and refactored graph schemas and indexes on high-frequency nodes, reducing recommendation latency by 10%.",
+    ],
+    stack: ["Python", "FastAPI", "Neo4j", "PostgreSQL"],
+    metric: { value: "10%", label: "Lower latency" },
   },
   {
     id: "asa",
@@ -49,7 +64,7 @@ export const experience: Experience[] = [
     summary:
       "Engineering and project leadership on CourtCheck, a tennis analytics platform for the UC Davis women's tennis program.",
     achievements: [
-      "Contributed full-stack, backend/database, deployment, and ML/CV pipeline work to an established production project.",
+      "Contribute full-stack, backend/database, deployment, and ML/CV pipeline work to an established production project.",
       "Built GPT-based automated scouting-report generation on top of the processed match analytics.",
       "Hold project-management responsibilities within the organization.",
     ],
@@ -61,8 +76,19 @@ export const experience: Experience[] = [
     org: "University of California, Davis",
     period: "Expected Dec 2027",
     kind: "education",
-    summary: "Focused on software engineering, AI / ML, and systems.",
+    summary:
+      "Foundations across algorithms, systems, and applied mathematics.",
     achievements: [],
-    stack: [],
+    stack: [
+      "Data Structures & Algorithms",
+      "Algorithm Design & Analysis",
+      "Software Development",
+      "Object-Oriented Programming",
+      "Computer Organization",
+      "Discrete Mathematics",
+      "Probability & Statistics",
+      "Linear Algebra",
+    ],
+    metric: { value: "3.5", label: "GPA" },
   },
 ];

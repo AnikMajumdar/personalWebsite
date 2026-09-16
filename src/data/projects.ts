@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react";
-import { Aperture } from "lucide-react";
+import { Aperture, Route } from "lucide-react";
 
 export type Category =
   | "AI/ML"
@@ -54,12 +54,15 @@ export const projects: Project[] = [
     tagline:
       "From 20+ hours of weekly film review to a ~5-minute per-match summary.",
     description:
-      "A tennis analytics platform built with UC Davis Aggie Sports Analytics for the UC Davis women's tennis program. CourtCheck turns match footage into structured analytics and AI-generated scouting reports through a pipeline of specialized computer-vision and machine-learning models.",
+      "A full-stack computer-vision and AI platform, built in partnership with UC Davis Tennis, that turns raw match footage into ball tracking, court detection, stroke recognition, heatmaps, shot maps, and AI-generated scouting reports for coaches.",
     categories: ["Computer Vision", "AI/ML", "Full Stack"],
     stack: [
       "Python",
       "PyTorch",
       "OpenCV",
+      "TrackNet v2",
+      "YOLOv8m-pose",
+      "CatBoost",
       "FastAPI",
       "Next.js",
       "React",
@@ -67,31 +70,69 @@ export const projects: Project[] = [
       "Supabase",
       "PostgreSQL",
       "Modal",
+      "GPT",
     ],
     problem:
       "Reviewing match film for a college tennis program can take 20+ hours a week. CourtCheck compresses that into a concise, automated per-match summary coaches can act on.",
     highlights: [
-      "Ball tracking with TrackNet v2 and player pose estimation with YOLOv8m-pose",
-      "Bounce classification with a CatBoost model, plus a Temporal Convolutional Network trained on UC Davis-labeled data for pose-based analysis",
-      "GPT-based automated scouting reports generated from the processed match analytics",
-      "FastAPI backend with Supabase / PostgreSQL and signed-URL video access, deployed on Modal and Vercel",
+      "Multi-stage CV pipeline: TrackNet v2 ball tracking, court detection, YOLOv8m-pose player pose, CatBoost bounce classification, and stroke recognition",
+      "GPU-accelerated inference on Modal, integrating 5+ specialized ML/CV models feeding downstream analytics",
+      "GPT-powered analysis turns processed analytics into scouting reports, heatmaps, and shot maps",
+      "FastAPI backend with Supabase (Auth, Storage, signed URLs) and PostgreSQL; Next.js / React / TypeScript frontend",
     ],
     impact:
-      "Turns 20+ hrs/week of film review into a ~5-minute per-match summary, with ~3× processing throughput across a pipeline of 5+ CV/ML models. Used by coaches in the UC Davis women's tennis program, with 5,000+ GitHub visits.",
+      "Cuts 20+ hrs/week of film review to a ~5-minute per-match summary, with ~3× video-processing throughput. Used by UC Davis women's tennis coaches, with 5,000+ GitHub clones.",
     metrics: [
       { value: "5+", label: "CV / ML Models" },
       { value: "3×", label: "Throughput" },
-      { value: "5,000+", label: "GitHub Visits" },
+      { value: "5,000+", label: "GitHub Clones" },
     ],
-    // TODO: add the public CourtCheck repo + live demo URLs to surface the CTAs.
-    // github: "https://github.com/...",
-    // demo: "https://...",
+    demo: "https://courtcheck-rho.vercel.app/",
     featured: true,
     icon: Aperture,
     motif: "scan",
     gradient: ["#7c8cff", "#b18cff"],
   },
+  {
+    id: "aeroroute",
+    name: "AeroRoute",
+    tagline:
+      "Optimized flight routes across 85,000+ airports, with geospatial search and an AI copilot.",
+    description:
+      "A full-stack flight route optimization platform that combines geospatial search, weather, and machine learning to plan routes — with a Gemini-powered RAG copilot for route-specific explanations and decision support.",
+    categories: ["Backend", "Full Stack", "AI/ML", "Data"],
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "PostGIS",
+      "PostgreSQL",
+      "Supabase",
+      "scikit-learn",
+      "Gemini",
+    ],
+    problem:
+      "Planning a good flight route means searching a huge space of airports and candidates while accounting for weather and diversions. AeroRoute turns that into an optimized, explainable plan.",
+    highlights: [
+      "Geospatial routing engine over 85,000+ airports using PostGIS spatial queries, weather data, and diversion-airport analysis",
+      "scikit-learn models predict flight delays and estimated time enroute, feeding the route optimizer",
+      "Gemini-powered RAG copilot delivers route-specific explanations and decision support on top of the optimizer",
+      "Asynchronous FastAPI backend with JWT authentication, rate limiting, REST APIs, and persistent route storage",
+    ],
+    impact:
+      "Searches 85,000+ airports to generate optimized, explainable flight plans, backed by ML predictions and an AI decision-support copilot.",
+    metrics: [
+      { value: "85K+", label: "Airports Searched" },
+      { value: "2", label: "ML Prediction Models" },
+    ],
+    demo: "https://aeroroute-six.vercel.app/",
+    featured: true,
+    icon: Route,
+    motif: "nodes",
+    gradient: ["#5fd6e6", "#7c8cff"],
+  },
 ];
 
-export const featuredProject = projects.find((p) => p.featured) ?? projects[0];
+export const featuredProjects = projects.filter((p) => p.featured);
 export const otherProjects = projects.filter((p) => !p.featured);

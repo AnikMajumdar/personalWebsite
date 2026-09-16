@@ -14,15 +14,16 @@ export interface SocialLink {
 }
 
 /**
- * Central site configuration. Intentionally free of personally identifying
- * information — replace placeholder hrefs ("#") with real links if desired.
+ * Central site configuration. Professional identity only — no private contact
+ * information (phone, email, address). The resume stays behind Clerk auth.
  */
 export const siteConfig = {
+  name: "Anik Majumdar",
   role: "Software Engineer",
   subrole: "Computer Science · UC Davis",
-  tagline: "Building intelligent software for the future.",
+  tagline: "Building intelligent software and scalable systems.",
   heroDescription:
-    "I'm a UC Davis Computer Science student building software at the intersection of AI and systems — production-facing backends, full-stack products, and computer-vision and machine-learning pipelines.",
+    "Computer Science student at UC Davis building across backend systems, AI/ML, and full-stack applications — from distributed systems to computer vision and geospatial AI.",
   resumeUrl: "#resume",
 
   nav: [
@@ -33,23 +34,28 @@ export const siteConfig = {
     { label: "Resume", href: "#resume", id: "resume" },
   ] satisfies NavItem[],
 
-  // Placeholder, non-identifying links. Swap "#" for real URLs when ready.
+  // Professional links. Contact details are intentionally omitted.
   socials: [
-    { label: "GitHub", href: "#", icon: GithubIcon },
-    { label: "LinkedIn", href: "#", icon: LinkedinIcon },
+    { label: "GitHub", href: "https://github.com/AnikMajumdar", icon: GithubIcon },
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/anik-maj/",
+      icon: LinkedinIcon,
+    },
     { label: "Resume", href: "#resume", icon: FileText },
   ] satisfies SocialLink[],
 
   about: {
     statement:
-      "I build intelligent, scalable software across the boundary between sophisticated backend systems and AI-powered applications.",
+      "Software engineering at the intersection of backend systems, AI/ML, and real-world applications.",
     detail:
-      "I'm a Computer Science student at UC Davis focused on production-oriented engineering — distributed backends, APIs, real-time data, and applied AI. My work spans computer-vision and machine-learning pipelines, full-stack products, and the infrastructure that ships them to real users.",
+      "I'm a Computer Science student at UC Davis focused on building production software across backend systems, AI/ML, and full-stack applications. My projects span computer vision, geospatial optimization, recommendation systems, distributed systems, and AI-powered applications.",
     interests: [
       "Backend Engineering",
       "AI Engineering",
       "Full-Stack Development",
       "Computer Vision",
+      "Geospatial Software",
       "Distributed Systems",
     ],
   },
