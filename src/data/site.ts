@@ -1,4 +1,4 @@
-import { FileText } from "lucide-react";
+import { FileText, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon, type IconType } from "@/components/ui/icons";
 
 export interface NavItem {
@@ -14,8 +14,8 @@ export interface SocialLink {
 }
 
 /**
- * Central site configuration. Professional identity only. No private contact
- * information (phone, email, address). The resume stays behind Clerk auth.
+ * Central site configuration. Professional identity plus a public contact
+ * email. No phone or address. The resume stays behind Clerk auth.
  */
 export const siteConfig = {
   name: "Anik Majumdar",
@@ -42,6 +42,7 @@ export const siteConfig = {
       href: "https://www.linkedin.com/in/anik-maj/",
       icon: LinkedinIcon,
     },
+    { label: "Email", href: "mailto:amaj@ucdavis.edu", icon: Mail },
     { label: "Resume", href: "#resume", icon: FileText },
   ] satisfies SocialLink[],
 

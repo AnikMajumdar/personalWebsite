@@ -53,6 +53,9 @@ export function ExperienceTimeline() {
                             <span className="text-sm font-semibold text-gradient">
                               {item.metric.value}
                             </span>
+                            <span aria-hidden className="text-[11px] text-faint">
+                              ·
+                            </span>
                             <span className="text-[11px] text-muted">
                               {item.metric.label}
                             </span>

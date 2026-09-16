@@ -126,6 +126,7 @@ export const projects: Project[] = [
       { value: "85K+", label: "Airports Searched" },
       { value: "2", label: "ML Prediction Models" },
     ],
+    github: "https://github.com/AnikMajumdar/AeroRoute",
     demo: "https://aeroroute-six.vercel.app/",
     featured: true,
     icon: Route,

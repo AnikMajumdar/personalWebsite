@@ -34,14 +34,25 @@ export function Counter({ value, className, duration = 1.6 }: CounterProps) {
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const reduce = useReducedMotion();
   const parsed = parse(value);
+  const finalText = parsed
+    ? parsed.prefix + format(parsed.target, parsed.decimals, parsed.comma) + parsed.suffix
+    : value;
 
   useEffect(() => {
-    if (!inView || !parsed || !ref.current) return;
+    if (!parsed || !ref.current) return;
     const node = ref.current;
 
+    // Reduced motion: keep the server-rendered real value.
     if (reduce) {
+      node.textContent = finalText;
+      return;
+    }
+
+    // Hold at 0 until scrolled into view. Without JS this branch never runs,
+    // so the initial HTML (the real value) stays visible.
+    if (!inView) {
       node.textContent =
-        parsed.prefix + format(parsed.target, parsed.decimals, parsed.comma) + parsed.suffix;
+        parsed.prefix + format(0, parsed.decimals, parsed.comma) + parsed.suffix;
       return;
     }
 
@@ -56,13 +67,11 @@ export function Counter({ value, className, duration = 1.6 }: CounterProps) {
       },
     });
     return () => controls.stop();
-  }, [inView, parsed, reduce, duration]);
-
-  if (!parsed) return <span className={className}>{value}</span>;
+  }, [inView, parsed, reduce, duration, finalText]);
 
   return (
     <span ref={ref} className={className}>
-      {parsed.prefix}0{parsed.suffix}
+      {finalText}
     </span>
   );
 }

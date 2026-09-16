@@ -42,7 +42,7 @@ export function Resume() {
             <Reveal delay={0.2}>
               <p className="mt-6 flex items-center gap-2 font-mono text-xs text-faint">
                 <FileText className="h-3.5 w-3.5" />
-                PDF · Updated 2026
+                PDF · Updated September 2026
               </p>
             </Reveal>
           </div>
