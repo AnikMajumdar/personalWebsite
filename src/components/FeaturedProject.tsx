@@ -71,6 +71,7 @@ export function FeaturedProject() {
             </ul>
           </Reveal>
 
+          {(project.github || project.demo) && (
           <Reveal delay={0.2}>
             <div className="mt-8 flex flex-wrap gap-3">
               {project.demo && (
@@ -95,6 +96,7 @@ export function FeaturedProject() {
               )}
             </div>
           </Reveal>
+          )}
         </div>
 
         {/* Visual */}
@@ -113,7 +115,6 @@ export function FeaturedProject() {
                 <p className="font-mono text-[11px] uppercase tracking-widest text-accent-soft">
                   {project.categories.join(" · ")}
                 </p>
-                <p className="mt-1 text-sm text-muted">Real-time perception pipeline</p>
               </div>
             </div>
           </motion.div>

@@ -20,7 +20,7 @@ export function ExperienceTimeline() {
         <SectionHeading
           eyebrow="Experience"
           title="A timeline of building and shipping."
-          description="Roles where I turned ambiguous problems into reliable systems — from ML infrastructure to distributed backends and full-stack products."
+          description="Where I've built production-facing software — from distributed ground systems at Turion Space to a computer-vision platform used by UC Davis coaches."
         />
 
         <div ref={ref} className="relative mt-16 pl-8 sm:pl-10">
@@ -59,25 +59,29 @@ export function ExperienceTimeline() {
                         {item.summary}
                       </p>
 
-                      <ul className="mt-4 space-y-2">
-                        {item.achievements.map((a) => (
-                          <li key={a} className="flex gap-2.5 text-sm text-foreground/80">
-                            <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-accent" />
-                            {a}
-                          </li>
-                        ))}
-                      </ul>
+                      {item.achievements.length > 0 && (
+                        <ul className="mt-4 space-y-2">
+                          {item.achievements.map((a) => (
+                            <li key={a} className="flex gap-2.5 text-sm text-foreground/80">
+                              <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-accent" />
+                              {a}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
 
-                      <ul className="mt-5 flex flex-wrap gap-1.5">
-                        {item.stack.map((tech) => (
-                          <li
-                            key={tech}
-                            className="rounded-md border border-border bg-white/[0.02] px-2 py-0.5 font-mono text-[11px] text-muted"
-                          >
-                            {tech}
-                          </li>
-                        ))}
-                      </ul>
+                      {item.stack.length > 0 && (
+                        <ul className="mt-5 flex flex-wrap gap-1.5">
+                          {item.stack.map((tech) => (
+                            <li
+                              key={tech}
+                              className="rounded-md border border-border bg-white/[0.02] px-2 py-0.5 font-mono text-[11px] text-muted"
+                            >
+                              {tech}
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   </div>
                 </Reveal>

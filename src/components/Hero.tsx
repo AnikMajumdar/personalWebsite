@@ -20,11 +20,11 @@ const item: Variants = {
 };
 
 const domains = [
-  "AI / ML",
+  "Software Engineering",
   "Backend",
-  "Full-Stack",
+  "AI / ML",
   "Computer Vision",
-  "Distributed Systems",
+  "Full-Stack",
 ];
 
 export function Hero() {
@@ -66,7 +66,7 @@ export function Hero() {
             <Sparkles className="h-3 w-3" />
             Open to opportunities
           </span>
-          <span className="hidden sm:inline">Software Engineer · CS Student</span>
+          <span className="hidden sm:inline">Software Engineer · CS @ UC Davis</span>
           <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </motion.a>
 

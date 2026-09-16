@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 const title = "Software Engineer — Portfolio";
 const description =
-  "Portfolio of a software engineer building intelligent, scalable software across AI/ML, backend systems, and full-stack products.";
+  "Portfolio of a UC Davis Computer Science student and software engineer building intelligent, scalable software across AI/ML, backend systems, and full-stack products.";
 
 export const metadata: Metadata = {
   title: {

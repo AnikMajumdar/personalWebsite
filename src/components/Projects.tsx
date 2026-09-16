@@ -37,14 +37,15 @@ export function Projects() {
       <div className="container-page">
         <SectionHeading
           eyebrow="Selected Work"
-          title="Projects engineered for depth, not just polish."
-          description="A cross-section of systems I've built — spanning machine learning, distributed backends, and full-stack products. Filter by domain or expand any card for the technical story."
+          title="Engineering that ships to real users."
+          description="A close look at CourtCheck — the computer-vision and full-stack platform I build with UC Davis Aggie Sports Analytics."
         />
 
         {/* Featured deep-dive */}
         <FeaturedProject />
 
-        {/* Filter bar */}
+        {/* Additional projects appear automatically when more are added */}
+        {otherProjects.length > 0 && (
         <div className="mt-24 sm:mt-28">
           <div className="mb-8 flex flex-wrap items-center gap-2">
             <LayoutGroup id="project-filters">
@@ -106,6 +107,7 @@ export function Projects() {
             </p>
           )}
         </div>
+        )}
       </div>
     </section>
   );
