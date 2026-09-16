@@ -43,11 +43,21 @@ export function ExperienceTimeline() {
                     </span>
 
                     <div className="surface-card rounded-2xl p-6 transition-colors duration-300 hover:border-border-strong sm:p-7">
-                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
                         <span className="inline-flex items-center gap-1.5 font-mono text-xs text-accent-soft">
                           <Icon className="h-3.5 w-3.5" />
                           {item.period}
                         </span>
+                        {item.metric && (
+                          <span className="inline-flex items-baseline gap-1.5 rounded-full border border-border bg-white/[0.02] px-3 py-1">
+                            <span className="text-sm font-semibold text-gradient">
+                              {item.metric.value}
+                            </span>
+                            <span className="text-[11px] text-muted">
+                              {item.metric.label}
+                            </span>
+                          </span>
+                        )}
                       </div>
 
                       <h3 className="mt-3 text-xl font-semibold tracking-tight text-foreground">

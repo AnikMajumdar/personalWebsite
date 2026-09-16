@@ -17,17 +17,17 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
-const title = "Software Engineer — Portfolio";
+const title = "Anik Majumdar — Software Engineer";
 const description =
-  "Portfolio of a UC Davis Computer Science student and software engineer building intelligent, scalable software across AI/ML, backend systems, and full-stack products.";
+  "Portfolio of Anik Majumdar, a UC Davis Computer Science student and software engineer building across backend systems, AI/ML, and full-stack applications.";
 
 export const metadata: Metadata = {
   title: {
     default: title,
-    template: "%s · Portfolio",
+    template: "%s · Anik Majumdar",
   },
   description,
-  applicationName: "SE Portfolio",
+  applicationName: "Anik Majumdar — Portfolio",
   keywords: [
     "Software Engineer",
     "AI",
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     "Computer Vision",
     "Distributed Systems",
   ],
-  authors: [{ name: "Software Engineer" }],
-  creator: "Software Engineer",
+  authors: [{ name: "Anik Majumdar" }],
+  creator: "Anik Majumdar",
   robots: { index: true, follow: true },
   openGraph: {
     title,
     description,
     type: "website",
-    siteName: "SE Portfolio",
+    siteName: "Anik Majumdar",
   },
   twitter: {
     card: "summary_large_image",

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { AnimatePresence, LayoutGroup, motion } from "motion/react";
-import { categories, otherProjects, type Category } from "@/data/projects";
+import { categories, featuredProjects, otherProjects, type Category } from "@/data/projects";
 import { ProjectCard } from "./ProjectCard";
 import { FeaturedProject } from "./FeaturedProject";
 import { SectionHeading } from "./ui/SectionHeading";
@@ -37,12 +37,18 @@ export function Projects() {
       <div className="container-page">
         <SectionHeading
           eyebrow="Selected Work"
-          title="Engineering that ships to real users."
-          description="A close look at CourtCheck — the computer-vision and full-stack platform I build with UC Davis Aggie Sports Analytics."
+          title="Two products, built end to end."
+          description="CourtCheck and AeroRoute span the range of my engineering — computer vision and full-stack on one side; backend, geospatial systems, and applied AI on the other."
         />
 
-        {/* Featured deep-dive */}
-        <FeaturedProject />
+        {/* Featured deep-dives */}
+        {featuredProjects.map((project, i) => (
+          <FeaturedProject
+            key={project.id}
+            project={project}
+            reverse={i % 2 === 1}
+          />
+        ))}
 
         {/* Additional projects appear automatically when more are added */}
         {otherProjects.length > 0 && (

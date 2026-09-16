@@ -16,8 +16,8 @@ export function Footer() {
               <span className="grid h-8 w-8 place-items-center rounded-[10px] bg-[linear-gradient(135deg,#8b97ff,#6f7bff_45%,#b18cff)]">
                 <LogoMark className="h-4 w-4 text-[#0a0a12]" />
               </span>
-              <span className="font-mono text-sm font-medium text-foreground/90">
-                portfolio<span className="text-accent">.</span>
+              <span className="text-sm font-semibold tracking-tight text-foreground/90">
+                {siteConfig.name}
               </span>
             </a>
             <p className="mt-4 text-sm leading-relaxed text-muted">
@@ -72,7 +72,7 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 sm:flex-row">
           <p className="font-mono text-xs text-faint">
-            © 2026 · Software Engineer Portfolio
+            © 2026 {siteConfig.name}
           </p>
           <a
             href="#home"

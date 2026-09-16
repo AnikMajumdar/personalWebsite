@@ -20,10 +20,10 @@ const item: Variants = {
 };
 
 const domains = [
-  "Software Engineering",
   "Backend",
   "AI / ML",
   "Computer Vision",
+  "Geospatial",
   "Full-Stack",
 ];
 
@@ -76,7 +76,7 @@ export function Hero() {
         >
           Building{" "}
           <span className="text-gradient-accent">intelligent</span> software
-          <br className="hidden sm:block" /> for the future.
+          <br className="hidden sm:block" /> and scalable systems.
         </motion.h1>
 
         <motion.p

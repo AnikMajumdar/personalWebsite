@@ -25,8 +25,8 @@ function Logo() {
       <span className="relative grid h-8 w-8 place-items-center overflow-hidden rounded-[10px] bg-[linear-gradient(135deg,#8b97ff,#6f7bff_45%,#b18cff)] shadow-[0_6px_18px_-6px_rgba(111,123,255,0.8)]">
         <LogoMark className="h-4 w-4 text-[#0a0a12]" />
       </span>
-      <span className="hidden font-mono text-[13px] font-medium tracking-tight text-foreground/90 sm:block">
-        portfolio<span className="text-accent">.</span>
+      <span className="hidden text-sm font-semibold tracking-tight text-foreground/90 sm:block">
+        {siteConfig.name}
       </span>
     </a>
   );
