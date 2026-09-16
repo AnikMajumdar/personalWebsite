@@ -39,35 +39,32 @@ export function Counter({ value, className, duration = 1.6 }: CounterProps) {
     : value;
 
   useEffect(() => {
-    if (!parsed || !ref.current) return;
     const node = ref.current;
+    const p = parse(value);
+    if (!node || !p) return;
 
-    // Reduced motion: keep the server-rendered real value.
-    if (reduce) {
-      node.textContent = finalText;
-      return;
-    }
+    const text = (n: number) =>
+      p.prefix + format(n, p.decimals, p.comma) + p.suffix;
 
-    // Hold at 0 until scrolled into view. Without JS this branch never runs,
-    // so the initial HTML (the real value) stays visible.
+    // Reduced motion: keep the server-rendered real value in place.
+    if (reduce) return;
+
+    // Hold at 0 until scrolled into view. Without JS this never runs, so the
+    // server-rendered real value stays visible.
     if (!inView) {
-      node.textContent =
-        parsed.prefix + format(0, parsed.decimals, parsed.comma) + parsed.suffix;
+      node.textContent = text(0);
       return;
     }
 
-    const controls = animate(0, parsed.target, {
+    const controls = animate(0, p.target, {
       duration,
       ease: [0.16, 1, 0.3, 1],
       onUpdate(latest) {
-        node.textContent =
-          parsed.prefix +
-          format(latest, parsed.decimals, parsed.comma) +
-          parsed.suffix;
+        node.textContent = text(latest);
       },
     });
     return () => controls.stop();
-  }, [inView, parsed, reduce, duration, finalText]);
+  }, [value, inView, reduce, duration]);
 
   return (
     <span ref={ref} className={className}>

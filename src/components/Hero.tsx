@@ -19,13 +19,11 @@ const item: Variants = {
   },
 };
 
-const domains = [
-  "Backend",
-  "AI / ML",
-  "Computer Vision",
-  "Geospatial",
-  "Full-Stack",
-];
+const technologies = ["Python", "Go", "PyTorch", "FastAPI", "PostgreSQL", "Kubernetes"];
+
+const heroLinks = siteConfig.socials.filter(
+  (s) => s.label === "GitHub" || s.label === "LinkedIn"
+);
 
 export function Hero() {
   return (
@@ -64,7 +62,7 @@ export function Hero() {
         >
           <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/15 px-2 py-0.5 text-xs font-medium text-accent-soft">
             <Sparkles className="h-3 w-3" />
-            Open to Summer 2027 Internships
+            Open to Summer 2027 SWE Internships
           </span>
           <span className="hidden sm:inline">Software Engineer · CS @ UC Davis</span>
           <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -72,16 +70,22 @@ export function Hero() {
 
         <motion.h1
           variants={item}
-          className="text-display text-gradient mt-7 max-w-4xl"
+          className="text-display text-gradient mt-7"
         >
-          Building{" "}
-          <span className="text-gradient-accent">intelligent</span> software
-          <br className="hidden sm:block" /> and scalable systems.
+          {siteConfig.name}
         </motion.h1>
 
         <motion.p
           variants={item}
-          className="text-lead mt-6 max-w-xl text-muted"
+          className="mt-4 text-2xl font-semibold tracking-tight text-foreground/90 sm:text-3xl"
+        >
+          Software Engineer{" "}
+          <span className="text-gradient-accent">· Backend + AI/ML</span>
+        </motion.p>
+
+        <motion.p
+          variants={item}
+          className="text-lead mt-6 max-w-2xl text-muted"
         >
           {siteConfig.heroDescription}
         </motion.p>
@@ -94,7 +98,7 @@ export function Hero() {
             href="#projects"
             className="btn-primary group inline-flex h-12 items-center justify-center gap-2 rounded-full px-7 text-sm"
           >
-            Explore Projects
+            View Projects
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </a>
           <a
@@ -106,14 +110,32 @@ export function Hero() {
           </a>
         </motion.div>
 
+        <motion.div variants={item} className="mt-6 flex items-center gap-2">
+          {heroLinks.map((s) => {
+            const Icon = s.icon;
+            return (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="grid h-10 w-10 place-items-center rounded-full border border-border bg-white/[0.03] text-muted transition-colors hover:border-border-strong hover:text-foreground"
+              >
+                <Icon className="h-[18px] w-[18px]" />
+              </a>
+            );
+          })}
+        </motion.div>
+
         <motion.ul
           variants={item}
           className="mt-12 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-xs text-faint"
         >
-          {domains.map((d, i) => (
-            <li key={d} className="flex items-center gap-3">
+          {technologies.map((tech, i) => (
+            <li key={tech} className="flex items-center gap-3">
               {i > 0 && <span className="h-1 w-1 rounded-full bg-white/15" />}
-              {d}
+              {tech}
             </li>
           ))}
         </motion.ul>

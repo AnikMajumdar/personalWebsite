@@ -10,6 +10,7 @@ export interface Experience {
   achievements: string[];
   stack: string[];
   metric?: { value: string; label: string };
+  earlier?: boolean;
 }
 
 export const experience: Experience[] = [
@@ -38,7 +39,7 @@ export const experience: Experience[] = [
       "Designed and built production-facing distributed ground software for spacecraft command, telemetry, and real-time data workflows.",
     achievements: [
       "Implemented an end-to-end command-and-telemetry pipeline across a distributed Go microservice architecture with UDP communication and real-time processing.",
-      "Built a real-time image-retrieval feature (Flask + REST) that returns captured images in a single API request, reducing payload size by 25%.",
+      "Built a real-time image-retrieval feature using Flask + REST that returns captured images in a single API request, reducing payload size by 25%.",
       "Developed automated validation and debugging workflows across Kubernetes clusters (Python, Bash, Docker) to verify command routing, telemetry ingestion, and service health.",
     ],
     stack: [
@@ -101,6 +102,7 @@ export const experience: Experience[] = [
       "Created a calendar filter, a To-Do widget, and a hypothetical grader, allowing students to create hypothetical assignments to determine the impact on their grades.",
     ],
     stack: [],
+    earlier: true,
   },
   {
     id: "osi-digital",
@@ -114,6 +116,7 @@ export const experience: Experience[] = [
       "Performed API development and testing, improving system interoperability and reducing manual data processing.",
     ],
     stack: ["Postman", "Dell Boomi"],
+    earlier: true,
   },
   {
     id: "education",
@@ -131,8 +134,6 @@ export const experience: Experience[] = [
       "Object-Oriented Programming",
       "Computer Organization",
       "Discrete Mathematics",
-      "Probability & Statistics",
-      "Linear Algebra",
     ],
     metric: { value: "3.5", label: "GPA" },
   },

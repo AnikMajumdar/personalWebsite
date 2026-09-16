@@ -7,18 +7,13 @@ import {
   Boxes,
 } from "lucide-react";
 
-export interface Skill {
-  name: string;
-  level: number; // 0-100, subtle emphasis (not a precise proficiency claim)
-}
-
 export interface SkillGroup {
   id: string;
   title: string;
   blurb: string;
   icon: LucideIcon;
   accent: string;
-  skills: Skill[];
+  skills: string[];
 }
 
 export const skillGroups: SkillGroup[] = [
@@ -28,13 +23,7 @@ export const skillGroups: SkillGroup[] = [
     blurb: "Python and Go anchor my recent engineering work.",
     icon: Code2,
     accent: "#7c8cff",
-    skills: [
-      { name: "Python", level: 90 },
-      { name: "C++", level: 80 },
-      { name: "JavaScript", level: 70 },
-      { name: "Java", level: 70 },
-      { name: "Go", level: 50 },
-    ],
+    skills: ["Python", "Go", "C++", "Java", "JavaScript / TypeScript"],
   },
   {
     id: "backend",
@@ -42,45 +31,23 @@ export const skillGroups: SkillGroup[] = [
     blurb: "Services built for real-time, distributed workloads.",
     icon: Server,
     accent: "#5fd6e6",
-    skills: [
-      { name: "FastAPI", level: 92 },
-      { name: "REST APIs", level: 90 },
-      { name: "gRPC", level: 82 },
-      { name: "Node.js", level: 80 },
-      { name: "Express.js", level: 78 },
-    ],
+    skills: ["FastAPI", "REST APIs", "gRPC", "Node.js"],
   },
   {
     id: "aiml",
     title: "AI / ML",
-    blurb: "Applied CV and ML pipelines, plus LLM-powered features.",
+    blurb: "Applied CV and ML pipelines behind CourtCheck and AeroRoute.",
     icon: BrainCircuit,
     accent: "#b18cff",
-    skills: [
-      { name: "PyTorch", level: 90 },
-      { name: "OpenCV", level: 88 },
-      { name: "scikit-learn", level: 84 },
-      { name: "CatBoost", level: 80 },
-      { name: "pandas", level: 86 },
-      { name: "NumPy", level: 86 },
-      { name: "OpenAI API", level: 84 },
-      { name: "Gemini API", level: 82 },
-    ],
+    skills: ["PyTorch", "OpenCV", "scikit-learn", "CatBoost"],
   },
   {
     id: "database",
-    title: "Databases & Data",
+    title: "Data",
     blurb: "Relational, geospatial, and graph storage.",
     icon: Database,
     accent: "#b18cff",
-    skills: [
-      { name: "PostgreSQL", level: 88 },
-      { name: "PostGIS", level: 80 },
-      { name: "Neo4j", level: 80 },
-      { name: "Supabase", level: 86 },
-      { name: "MongoDB", level: 76 },
-      { name: "ClickHouse", level: 74 },
-    ],
+    skills: ["PostgreSQL", "PostGIS", "Neo4j", "ClickHouse"],
   },
   {
     id: "infra",
@@ -88,13 +55,6 @@ export const skillGroups: SkillGroup[] = [
     blurb: "Containerized apps shipped and scaled.",
     icon: Boxes,
     accent: "#7c8cff",
-    skills: [
-      { name: "Docker", level: 88 },
-      { name: "Kubernetes", level: 84 },
-      { name: "Linux", level: 82 },
-      { name: "Git", level: 92 },
-      { name: "Vercel", level: 86 },
-      { name: "Modal", level: 80 },
-    ],
+    skills: ["Docker", "Kubernetes", "Linux", "Modal", "Git"],
   },
 ];

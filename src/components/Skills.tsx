@@ -1,12 +1,10 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
 import { skillGroups, type SkillGroup } from "@/data/skills";
 import { SectionHeading } from "./ui/SectionHeading";
 import { Reveal } from "./ui/Reveal";
 
 function SkillCard({ group, index }: { group: SkillGroup; index: number }) {
-  const reduce = useReducedMotion();
   const Icon = group.icon;
 
   return (
@@ -24,36 +22,20 @@ function SkillCard({ group, index }: { group: SkillGroup; index: number }) {
           >
             <Icon className="h-5 w-5" />
           </span>
-          <div>
-            <h3 className="font-semibold tracking-tight text-foreground">
-              {group.title}
-            </h3>
-            <p className="text-xs text-faint">{group.skills.length} skills</p>
-          </div>
+          <h3 className="font-semibold tracking-tight text-foreground">
+            {group.title}
+          </h3>
         </div>
 
         <p className="mt-4 text-sm text-muted">{group.blurb}</p>
 
-        <ul className="mt-5 space-y-3">
+        <ul className="mt-5 flex flex-wrap gap-2">
           {group.skills.map((skill) => (
-            <li key={skill.name}>
-              <div className="mb-1.5 flex items-center justify-between text-sm">
-                <span className="text-foreground/85">{skill.name}</span>
-              </div>
-              <div className="h-1 overflow-hidden rounded-full bg-white/[0.06]">
-                <motion.span
-                  className="block h-full rounded-full"
-                  style={{ background: group.accent }}
-                  initial={{ width: reduce ? `${skill.level}%` : 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{
-                    duration: 1,
-                    delay: 0.1,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                />
-              </div>
+            <li
+              key={skill}
+              className="rounded-lg border border-border bg-white/[0.02] px-2.5 py-1 font-mono text-xs text-muted transition-colors group-hover:border-border-strong group-hover:text-foreground/80"
+            >
+              {skill}
             </li>
           ))}
         </ul>

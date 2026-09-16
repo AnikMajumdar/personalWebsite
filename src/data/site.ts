@@ -21,9 +21,9 @@ export const siteConfig = {
   name: "Anik Majumdar",
   role: "Software Engineer",
   subrole: "Computer Science · UC Davis",
-  tagline: "Building intelligent software and scalable systems.",
+  tagline: "Building production backend and AI/ML systems.",
   heroDescription:
-    "Computer Science student at UC Davis building across backend systems, AI/ML, and full-stack applications, from distributed systems to computer vision and geospatial AI.",
+    "UC Davis Computer Science student building production software across distributed systems, AI/ML, and full-stack applications.",
   resumeUrl: "#resume",
 
   nav: [
@@ -48,17 +48,9 @@ export const siteConfig = {
 
   about: {
     statement:
-      "Software engineering at the intersection of backend systems, AI/ML, and real-world applications.",
+      "I like building software where the engineering problem connects to a real-world system, from analyzing tennis matches with computer vision to processing spacecraft telemetry and optimizing flight routes with geospatial data.",
     detail:
-      "I'm a Computer Science student at UC Davis focused on building production software across backend systems, AI/ML, and full-stack applications. My projects span computer vision, geospatial optimization, recommendation engines, distributed systems, and AI-powered applications.",
-    interests: [
-      "Backend Engineering",
-      "AI Engineering",
-      "Full-Stack Development",
-      "Computer Vision",
-      "Geospatial Software",
-      "Distributed Systems",
-    ],
+      "My work spans backend systems, AI/ML, and full-stack development, with a focus on turning complex data and workflows into usable software.",
   },
 } as const;
 

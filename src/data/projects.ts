@@ -54,7 +54,7 @@ export const projects: Project[] = [
     tagline:
       "From 20+ hours of weekly film review to a ~5-minute per-match summary.",
     description:
-      "A full-stack computer-vision and AI platform, built in partnership with UC Davis Tennis, that turns raw match footage into ball tracking, court detection, stroke recognition, heatmaps, shot maps, and AI-generated scouting reports for coaches.",
+      "Full-stack computer vision platform built with UC Davis Women's Tennis to automate match analysis and scouting.",
     categories: ["Computer Vision", "AI/ML", "Full Stack"],
     stack: [
       "Python",
@@ -65,27 +65,24 @@ export const projects: Project[] = [
       "CatBoost",
       "FastAPI",
       "Next.js",
-      "React",
       "TypeScript",
-      "Supabase",
       "PostgreSQL",
+      "Supabase",
       "Modal",
-      "GPT",
     ],
     problem:
       "Reviewing match film for a college tennis program can take 20+ hours a week. CourtCheck compresses that into a concise, automated per-match summary coaches can act on.",
     highlights: [
-      "Multi-stage CV pipeline: TrackNet v2 ball tracking, court detection, YOLOv8m-pose player pose, CatBoost bounce classification, and stroke recognition",
-      "GPU-accelerated inference on Modal, integrating 5+ specialized ML/CV models feeding downstream analytics",
-      "GPT-powered analysis turns processed analytics into scouting reports, heatmaps, and shot maps",
-      "FastAPI backend with Supabase (Auth, Storage, signed URLs) and PostgreSQL; Next.js / React / TypeScript frontend",
+      "Built a multi-stage computer vision pipeline using TrackNet v2, YOLOv8m-pose, CatBoost, and PyTorch for ball tracking, player pose, bounce classification, and stroke recognition.",
+      "Deployed GPU-accelerated inference on Modal and integrated 5+ ML/CV models into a production analytics pipeline.",
+      "Built a FastAPI + PostgreSQL/Supabase backend and Next.js frontend, reducing ~20 hours of manual film review to ~5 minutes per match.",
     ],
     impact:
       "Cuts 20+ hrs/week of film review to a ~5-minute per-match summary, with ~3× video-processing throughput. Used by UC Davis women's tennis coaches, with 5,000+ GitHub clones.",
     metrics: [
       { value: "5+", label: "CV / ML Models" },
       { value: "3×", label: "Throughput" },
-      { value: "5,000+", label: "GitHub Clones" },
+      { value: "5K+", label: "Repository Clones" },
     ],
     demo: "https://courtcheck-rho.vercel.app/",
     featured: true,
@@ -97,28 +94,28 @@ export const projects: Project[] = [
     id: "aeroroute",
     name: "AeroRoute",
     tagline:
-      "Optimized flight routes across 85,000+ airports, with geospatial search and an AI copilot.",
+      "Geospatial flight-route optimization across 85,000+ airports with weather-aware ML predictions.",
     description:
-      "A full-stack flight route optimization platform that combines geospatial search, weather, and machine learning to plan routes, with a Gemini-powered RAG copilot for route-specific explanations and decision support.",
+      "Full-stack flight route optimization platform combining geospatial search, weather data, machine learning, and route-specific explanations grounded in a Gemini-powered RAG system.",
     categories: ["Backend", "Full Stack", "AI/ML", "Data"],
     stack: [
-      "Next.js",
-      "React",
-      "TypeScript",
       "FastAPI",
       "PostGIS",
       "PostgreSQL",
-      "Supabase",
       "scikit-learn",
       "Gemini",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase",
     ],
     problem:
       "Planning a good flight route means searching a huge space of airports and candidates while accounting for weather and diversions. AeroRoute turns that into an optimized, explainable plan.",
     highlights: [
-      "Geospatial routing engine over 85,000+ airports using PostGIS spatial queries, weather data, and diversion-airport analysis",
-      "scikit-learn models predict flight delays and estimated time enroute, feeding the route optimizer",
-      "Gemini-powered RAG copilot delivers route-specific explanations and decision support on top of the optimizer",
-      "Asynchronous FastAPI backend with JWT authentication, rate limiting, REST APIs, and persistent route storage",
+      "Built a geospatial routing engine over 85,000+ airports using PostGIS spatial queries, weather data, and diversion-airport analysis.",
+      "Built scikit-learn models for flight-delay and estimated-time-enroute prediction and integrated their outputs into route optimization.",
+      "Built a Gemini-powered RAG system that provides route-specific explanations and decision support.",
+      "Built an asynchronous FastAPI backend with JWT authentication, rate limiting, REST APIs, and persistent route storage.",
     ],
     impact:
       "Searches 85,000+ airports to generate optimized, explainable flight plans, backed by ML predictions and an AI decision-support copilot.",
