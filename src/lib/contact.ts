@@ -13,7 +13,7 @@ export function isEmailConfigured(): boolean {
   return !!process.env.RESEND_API_KEY;
 }
 
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "amaj@ucdavis.edu";
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || "amajumdar111405@gmail.com";
 const FROM_EMAIL =
   process.env.CONTACT_FROM_EMAIL || "Portfolio Contact <onboarding@resend.dev>";
 
