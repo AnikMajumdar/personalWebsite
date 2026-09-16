@@ -34,9 +34,9 @@ async function ensureSchema(sql: Sql): Promise<void> {
  * without sensitive detail so they can't break the download flow.
  */
 export async function recordResumeAccess(clerkUserId: string): Promise<void> {
-  const sql = getSql();
-  if (!sql) return;
   try {
+    const sql = getSql();
+    if (!sql) return;
     await ensureSchema(sql);
     await sql`INSERT INTO resume_access (clerk_user_id) VALUES (${clerkUserId})`;
   } catch {
