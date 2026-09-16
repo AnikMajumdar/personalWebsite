@@ -11,7 +11,7 @@ interface CounterProps {
 
 /** Parse "5,000+" -> { prefix:"", num:5000, suffix:"+", decimals:0, comma:true }. */
 function parse(value: string) {
-  const match = value.match(/^([^\d]*)([\d.,]+)(.*)$/s);
+  const match = value.match(/^([^\d]*)([\d.,]+)(.*)$/);
   if (!match) return null;
   const [, prefix, numStr, suffix] = match;
   const comma = numStr.includes(",");

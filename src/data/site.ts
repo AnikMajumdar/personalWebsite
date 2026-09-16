@@ -1,5 +1,5 @@
-import type { LucideIcon } from "lucide-react";
-import { Github, Linkedin, FileText } from "lucide-react";
+import { FileText } from "lucide-react";
+import { GithubIcon, LinkedinIcon, type IconType } from "@/components/ui/icons";
 
 export interface NavItem {
   label: string;
@@ -10,7 +10,7 @@ export interface NavItem {
 export interface SocialLink {
   label: string;
   href: string;
-  icon: LucideIcon;
+  icon: IconType;
 }
 
 /**
@@ -35,8 +35,8 @@ export const siteConfig = {
 
   // Placeholder, non-identifying links. Swap "#" for real URLs when ready.
   socials: [
-    { label: "GitHub", href: "#", icon: Github },
-    { label: "LinkedIn", href: "#", icon: Linkedin },
+    { label: "GitHub", href: "#", icon: GithubIcon },
+    { label: "LinkedIn", href: "#", icon: LinkedinIcon },
     { label: "Resume", href: "/resume.pdf", icon: FileText },
   ] satisfies SocialLink[],
 
