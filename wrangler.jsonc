@@ -1,0 +1,23 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "personal-website",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-03-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".open-next/assets"
+  },
+  "observability": {
+    "enabled": true
+  }
+
+  // --- Optional: serve the resume from private R2 storage ---------------
+  // 1. Create a bucket:   npx wrangler r2 bucket create portfolio-resume
+  // 2. Upload the file:   npx wrangler r2 object put portfolio-resume/resume.pdf --file ./resume.pdf
+  // 3. Uncomment the binding below and redeploy. The app auto-detects it.
+  //
+  // "r2_buckets": [
+  //   { "binding": "RESUME_BUCKET", "bucket_name": "portfolio-resume" }
+  // ]
+}
