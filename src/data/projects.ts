@@ -84,6 +84,7 @@ export const projects: Project[] = [
       { value: "3×", label: "Throughput" },
       { value: "5K+", label: "Repository Clones" },
     ],
+    github: "https://github.com/AggieSportsAnalytics/CourtCheck",
     demo: "https://courtcheck-rho.vercel.app/",
     featured: true,
     icon: Aperture,
