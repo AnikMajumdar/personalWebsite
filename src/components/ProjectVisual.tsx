@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Motif } from "@/data/projects";
 import { cn } from "@/lib/utils";
 
@@ -5,22 +6,41 @@ interface ProjectVisualProps {
   motif: Motif;
   gradient: [string, string];
   uid: string;
+  image?: string;
+  imageAlt?: string;
   className?: string;
 }
 
 /**
  * Abstract, generated visuals per project. No stock imagery. Each motif is a
  * lightweight SVG keyed to the project's accent gradient. Motion is subtle and
- * disabled under prefers-reduced-motion via global CSS.
+ * disabled under prefers-reduced-motion via global CSS. When `image` is set the
+ * project renders that screenshot instead of the generated motif.
  */
 export function ProjectVisual({
   motif,
   gradient,
   uid,
+  image,
+  imageAlt,
   className,
 }: ProjectVisualProps) {
   const [from, to] = gradient;
   const gid = `g-${uid}`;
+
+  if (image) {
+    return (
+      <div className={cn("absolute inset-0 overflow-hidden", className)}>
+        <Image
+          src={image}
+          alt={imageAlt ?? ""}
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="object-cover"
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={cn("absolute inset-0 overflow-hidden", className)}>

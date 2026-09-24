@@ -45,6 +45,8 @@ export interface Project {
   icon: LucideIcon;
   motif: Motif;
   gradient: [string, string];
+  image?: string;
+  imageAlt?: string;
 }
 
 export const projects: Project[] = [
@@ -90,6 +92,9 @@ export const projects: Project[] = [
     icon: Aperture,
     motif: "scan",
     gradient: ["#7c8cff", "#b18cff"],
+    image: "/courtcheckImage.png",
+    imageAlt:
+      "CourtCheck computer-vision overlay on a tennis match — court detection, ball tracking, and player detection with a court minimap.",
   },
   {
     id: "aeroroute",
@@ -130,6 +135,9 @@ export const projects: Project[] = [
     icon: Route,
     motif: "nodes",
     gradient: ["#5fd6e6", "#7c8cff"],
+    image: "/aeroRoureImage.png",
+    imageAlt:
+      "AeroRoute flight-planning map — an optimized primary route with alternate paths, waypoints, weather checkpoints, and diversion airports across the United States.",
   },
 ];
 

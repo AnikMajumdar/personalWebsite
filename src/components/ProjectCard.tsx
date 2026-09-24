@@ -67,6 +67,8 @@ export function ProjectCard({
               motif={project.motif}
               gradient={project.gradient}
               uid={project.id}
+              image={project.image}
+              imageAlt={project.imageAlt}
               className="transition-transform duration-500 group-hover:scale-[1.06]"
             />
             <span className="absolute left-4 top-4 z-10 inline-flex items-center gap-1.5 rounded-full border border-border bg-background/60 px-2.5 py-1 font-mono text-[11px] text-muted backdrop-blur-md">

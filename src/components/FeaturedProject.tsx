@@ -120,6 +120,8 @@ export function FeaturedProject({ project, reverse = false }: FeaturedProjectPro
               motif={project.motif}
               gradient={project.gradient}
               uid={`${project.id}-featured`}
+              image={project.image}
+              imageAlt={project.imageAlt}
             />
             <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-background/90 to-transparent p-6">
               <p className="font-mono text-[11px] uppercase tracking-widest text-accent-soft">
