@@ -25,21 +25,6 @@ export const experience: Experience[] = [
     stack: [],
   },
   {
-    id: "asa-swe",
-    role: "Software Engineer",
-    org: "UC Davis Aggie Sports Analytics",
-    period: "Sep 2025 - Aug 2026",
-    kind: "work",
-    summary:
-      "Built CourtCheck, a computer-vision and AI tennis analytics platform for the UC Davis women's tennis program.",
-    achievements: [
-      "Built and deployed a full-stack computer vision and AI platform used by UC Davis women's tennis coaches to convert match footage into ball tracking, court detection, bounce classification, stroke recognition, heatmaps, shot maps, and scouting reports.",
-      "Reduced coach film review from 20+ hours/week to a 5-minute per-match summary by building video upload workflows, FastAPI processing APIs, Supabase PostgreSQL/Auth/Storage, signed URLs, a Next.js analytics dashboard, and GPT-powered AI summaries.",
-      "Engineered a GPU-accelerated Modal inference pipeline integrating 5+ ML/CV models, improving video processing throughput by ~3x and attracting 5,000+ GitHub clones.",
-    ],
-    stack: ["Python", "FastAPI", "Next.js", "Supabase", "PyTorch", "Modal"],
-  },
-  {
     id: "turion",
     role: "Software Engineering Intern",
     org: "Turion Space",
@@ -64,6 +49,21 @@ export const experience: Experience[] = [
       "Bash",
     ],
     metric: { value: "25%", label: "Payload reduction" },
+  },
+  {
+    id: "asa-swe",
+    role: "Software Engineer",
+    org: "UC Davis Aggie Sports Analytics",
+    period: "Sep 2025 - June 2026",
+    kind: "work",
+    summary:
+      "Built CourtCheck, a computer-vision and AI tennis analytics platform for the UC Davis women's tennis program.",
+    achievements: [
+      "Built and deployed a full-stack computer vision and AI platform used by UC Davis women's tennis coaches to convert match footage into ball tracking, court detection, bounce classification, stroke recognition, heatmaps, shot maps, and scouting reports.",
+      "Reduced coach film review from 20+ hours/week to a 5-minute per-match summary by building video upload workflows, FastAPI processing APIs, Supabase PostgreSQL/Auth/Storage, signed URLs, a Next.js analytics dashboard, and GPT-powered AI summaries.",
+      "Engineered a GPU-accelerated Modal inference pipeline integrating 5+ ML/CV models, improving video processing throughput by ~3x and attracting 5,000+ GitHub clones.",
+    ],
+    stack: ["Python", "FastAPI", "Next.js", "Supabase", "PyTorch", "Modal"],
   },
   {
     id: "xiphi",
