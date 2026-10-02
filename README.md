@@ -18,14 +18,14 @@ A premium, futuristic personal portfolio for a software engineer — dark, minim
 - [Tailwind CSS v4](https://tailwindcss.com) · [Motion](https://motion.dev) · [Lucide](https://lucide.dev) · [Geist](https://vercel.com/font)
 - [Clerk](https://clerk.com) — authentication (resume access only)
 - [Neon](https://neon.tech) — serverless Postgres (access audit / future data)
-- [Render](https://render.com) — deployment (Node web service)
+- [Vercel](https://vercel.com) — deployment (Next.js, zero-config)
 
 ## Architecture
 
 ```
               ┌──────────────────────┐
-              │        Render        │
-              │  Next.js web service │
+              │        Vercel        │
+              │     Next.js (SSR)    │
               └──────────┬───────────┘
                          │
           ┌──────────────┴──────────────┐
@@ -89,30 +89,36 @@ is only served through the authenticated `/api/resume` route — never as a stat
 file. To use your own resume, replace that module (a base64-encoded PDF);
 `scripts/generate_resume.py` can regenerate it.
 
-## Deploy to Render
+## Deploy to Vercel
 
-This repo includes a [`render.yaml`](render.yaml) Blueprint, so deployment is
-declarative — **not** tied to Vercel or Cloudflare.
+Vercel detects Next.js automatically — no config file or adapter is required.
 
 1. Push the repo to GitHub.
-2. In the [Render dashboard](https://dashboard.render.com), choose **New + →
-   Blueprint** and select the repository. Render reads `render.yaml` and
-   provisions a Node web service:
-   - Build: `npm ci --include=dev && npm run build`
-   - Start: `npm run start`
-   - Node version: pinned by `.node-version`
-3. When prompted, set the environment variables (used at build **and** runtime,
-   so the Clerk publishable key is correctly inlined):
+2. In the [Vercel dashboard](https://vercel.com/new), choose **Add New… →
+   Project** and import the repository. Vercel auto-detects the framework and
+   build settings:
+   - Framework preset: **Next.js**
+   - Build: `next build` (default)
+   - Install: `npm install` (default)
+   - Node version: pinned by `engines.node` in `package.json` (**22.x**)
+3. Add the environment variables under **Settings → Environment Variables**
+   (select the Production, Preview, and Development scopes you need). The
+   `NEXT_PUBLIC_*` values are inlined at build time, so set them before the
+   first build:
    ```
    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
    CLERK_SECRET_KEY
    DATABASE_URL
+   # optional — enables contact-form email (otherwise messages persist to Neon)
+   RESEND_API_KEY
+   CONTACT_TO_EMAIL
+   CONTACT_FROM_EMAIL
    ```
-4. Deploy. Render builds, starts the server, and gives you a `*.onrender.com`
-   URL. Pushes to `main` auto-deploy.
+4. Deploy. Vercel builds and gives you a `*.vercel.app` URL. Pushes to `main`
+   auto-deploy to production; other branches get preview deployments.
 
-> Prefer the dashboard over the Blueprint? Create a **Web Service**, connect the
-> repo, and use the same build/start commands above.
+> Prefer the CLI? Run `npx vercel` to link and deploy a preview, or
+> `npx vercel --prod` for a production deploy.
 
 ## Environment Variables
 
@@ -122,8 +128,8 @@ declarative — **not** tied to Vercel or Cloudflare.
 | `CLERK_SECRET_KEY` | server | Clerk secret key |
 | `DATABASE_URL` | server | Neon pooled connection string |
 
-Locally these come from `.env.local`; on Render, set them under **Environment**.
-See `.env.example`. Never commit real secrets.
+Locally these come from `.env.local`; on Vercel, set them under **Settings →
+Environment Variables**. See `.env.example`. Never commit real secrets.
 
 ## Security
 
@@ -150,8 +156,7 @@ src/
     resume.ts         # serves the bundled resume asset
     resume-asset.ts   # server-only bundled PDF (base64)
   proxy.ts            # Clerk proxy (does not protect the public site)
-render.yaml           # Render Blueprint (Node web service)
-.node-version         # pinned Node version for Render
+.node-version         # pinned Node version (local tooling)
 ```
 
 ## Customizing

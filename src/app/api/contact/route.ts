@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
     ? await sendContactEmail({ name, email, message })
     : false;
 
-  // Visible in Render logs so email delivery can be verified/diagnosed.
+  // Visible in Vercel logs so email delivery can be verified/diagnosed.
   console.log(
     `[contact] stored=${stored} emailConfigured=${emailConfigured} emailed=${emailed}`
   );
