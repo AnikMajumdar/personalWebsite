@@ -50,10 +50,10 @@ export function Resume() {
           {/* Document preview */}
           <Reveal delay={0.1}>
             <div className="group relative [perspective:1400px]">
-              <div className="pointer-events-none absolute inset-0 -z-10 rounded-[2rem] bg-[radial-gradient(circle_at_50%_30%,rgba(124,140,255,0.22),transparent_65%)] blur-2xl" />
+              <div className="pointer-events-none absolute inset-0 -z-10 rounded-[2rem] bg-[radial-gradient(circle_at_50%_30%,rgba(77,139,255,0.22),transparent_65%)] blur-2xl" />
               <div className="surface-card relative overflow-hidden rounded-2xl p-6 transition-transform duration-500 [transform:rotateX(6deg)_rotateY(-8deg)] group-hover:[transform:rotateX(2deg)_rotateY(-3deg)] sm:p-8">
                 {/* Header band */}
-                <div className="flex items-center justify-between rounded-xl bg-[linear-gradient(120deg,rgba(124,140,255,0.16),rgba(177,140,255,0.1))] p-5">
+                <div className="flex items-center justify-between rounded-xl bg-[linear-gradient(120deg,rgba(77,139,255,0.16),rgba(34,211,238,0.10))] p-5">
                   <div>
                     <div className="text-lg font-semibold text-foreground">
                       {siteConfig.name}

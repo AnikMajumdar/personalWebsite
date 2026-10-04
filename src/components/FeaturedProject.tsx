@@ -44,7 +44,7 @@ export function FeaturedProject({ project, reverse = false }: FeaturedProjectPro
         <div className={cn(reverse && "lg:order-2")}>
           <Reveal>
             <div className="flex items-center gap-3">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-[linear-gradient(135deg,#8b97ff,#b18cff)] shadow-[0_10px_30px_-10px_rgba(124,140,255,0.7)]">
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-[linear-gradient(135deg,#5b9dff,#22d3ee)] shadow-[0_10px_30px_-10px_rgba(47,107,255,0.7)]">
                 <Icon className="h-5 w-5 text-[#0a0a12]" />
               </span>
               <h3 className="text-h2 text-gradient">{project.name}</h3>

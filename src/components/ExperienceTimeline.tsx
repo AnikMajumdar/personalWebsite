@@ -28,7 +28,7 @@ export function ExperienceTimeline() {
           <div className="absolute left-[7px] top-2 bottom-2 w-px bg-border sm:left-[11px]" />
           <motion.div
             style={{ scaleY: scrollYProgress }}
-            className="absolute left-[7px] top-2 bottom-2 w-px origin-top bg-gradient-to-b from-accent via-violet to-transparent sm:left-[11px]"
+            className="absolute left-[7px] top-2 bottom-2 w-px origin-top bg-gradient-to-b from-accent via-sky to-transparent sm:left-[11px]"
           />
 
           <div className="space-y-10">

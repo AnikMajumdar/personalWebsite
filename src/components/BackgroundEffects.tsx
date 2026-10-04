@@ -10,12 +10,12 @@ export function BackgroundEffects() {
     >
       {/* Base vignette */}
       <div className="absolute inset-0 bg-background" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-10%,rgba(124,140,255,0.10),transparent_60%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_120%,rgba(177,140,255,0.08),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_50%_-10%,rgba(77,139,255,0.12),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_90%_60%_at_50%_120%,rgba(34,211,238,0.07),transparent_60%)]" />
 
       {/* Drifting aurora blobs */}
-      <div className="absolute -left-[10%] top-[6%] h-[42vw] w-[42vw] rounded-full bg-[radial-gradient(circle,rgba(124,140,255,0.20),transparent_70%)] blur-3xl animate-aurora-1" />
-      <div className="absolute -right-[8%] top-[30%] h-[38vw] w-[38vw] rounded-full bg-[radial-gradient(circle,rgba(95,214,230,0.14),transparent_70%)] blur-3xl animate-aurora-2" />
+      <div className="absolute -left-[10%] top-[6%] h-[42vw] w-[42vw] rounded-full bg-[radial-gradient(circle,rgba(77,139,255,0.20),transparent_70%)] blur-3xl animate-aurora-1" />
+      <div className="absolute -right-[8%] top-[30%] h-[38vw] w-[38vw] rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.14),transparent_70%)] blur-3xl animate-aurora-2" />
 
       {/* Fine grid with radial fade */}
       <div className="absolute inset-0 bg-grid bg-grid-fade opacity-70" />

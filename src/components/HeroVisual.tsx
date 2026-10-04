@@ -86,7 +86,7 @@ export function HeroVisual() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(196, 204, 255, 0.55)";
+        ctx.fillStyle = "rgba(180, 206, 255, 0.55)";
         ctx.fill();
 
         for (let j = i + 1; j < particles.length; j++) {
@@ -96,7 +96,7 @@ export function HeroVisual() {
           const d = Math.hypot(dx, dy);
           if (d < LINK_DIST) {
             const a = (1 - d / LINK_DIST) * 0.22;
-            ctx.strokeStyle = `rgba(124, 140, 255, ${a})`;
+            ctx.strokeStyle = `rgba(77, 139, 255, ${a})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);

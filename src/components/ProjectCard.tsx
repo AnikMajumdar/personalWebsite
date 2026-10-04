@@ -51,7 +51,7 @@ export function ProjectCard({
           className="pointer-events-none absolute inset-0 z-20 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           style={{
             background:
-              "radial-gradient(240px circle at var(--spot-x,50%) var(--spot-y,0), rgba(124,140,255,0.10), transparent 60%)",
+              "radial-gradient(240px circle at var(--spot-x,50%) var(--spot-y,0), rgba(77,139,255,0.12), transparent 60%)",
           }}
         />
 

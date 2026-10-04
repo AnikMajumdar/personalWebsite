@@ -91,7 +91,7 @@ export const projects: Project[] = [
     featured: true,
     icon: Aperture,
     motif: "scan",
-    gradient: ["#7c8cff", "#b18cff"],
+    gradient: ["#4d8bff", "#22d3ee"],
     image: "/courtcheckImage.png",
     imageAlt:
       "CourtCheck computer-vision overlay on a tennis match — court detection, ball tracking, and player detection with a court minimap.",
@@ -134,7 +134,7 @@ export const projects: Project[] = [
     featured: true,
     icon: Route,
     motif: "nodes",
-    gradient: ["#5fd6e6", "#7c8cff"],
+    gradient: ["#22d3ee", "#4d8bff"],
     image: "/aeroRoureImage.png",
     imageAlt:
       "AeroRoute flight-planning map — an optimized primary route with alternate paths, waypoints, weather checkpoints, and diversion airports across the United States.",

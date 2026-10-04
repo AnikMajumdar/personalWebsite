@@ -13,7 +13,7 @@ export function Footer() {
           {/* Brand */}
           <div className="max-w-sm">
             <a href="#home" className="flex items-center gap-2.5" aria-label="Home">
-              <span className="grid h-8 w-8 place-items-center rounded-[10px] bg-[linear-gradient(135deg,#8b97ff,#6f7bff_45%,#b18cff)]">
+              <span className="grid h-8 w-8 place-items-center rounded-[10px] bg-[linear-gradient(135deg,#5b9dff,#3b82f6_45%,#22d3ee)]">
                 <LogoMark className="h-4 w-4 text-[#0a0a12]" />
               </span>
               <span className="text-sm font-semibold tracking-tight text-foreground/90">

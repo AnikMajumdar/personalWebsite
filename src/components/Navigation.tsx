@@ -22,7 +22,7 @@ function Logo() {
       aria-label="Home"
       className="group flex items-center gap-2.5"
     >
-      <span className="relative grid h-8 w-8 place-items-center overflow-hidden rounded-[10px] bg-[linear-gradient(135deg,#8b97ff,#6f7bff_45%,#b18cff)] shadow-[0_6px_18px_-6px_rgba(111,123,255,0.8)]">
+      <span className="relative grid h-8 w-8 place-items-center overflow-hidden rounded-[10px] bg-[linear-gradient(135deg,#5b9dff,#3b82f6_45%,#22d3ee)] shadow-[0_6px_18px_-6px_rgba(47,107,255,0.8)]">
         <LogoMark className="h-4 w-4 text-[#0a0a12]" />
       </span>
       <span className="hidden text-sm font-semibold tracking-tight text-foreground/90 sm:block">
@@ -63,7 +63,7 @@ export function Navigation() {
       <motion.div
         aria-hidden
         style={{ scaleX: progress }}
-        className="fixed inset-x-0 top-0 z-[60] h-0.5 origin-left bg-[linear-gradient(90deg,#7c8cff,#b18cff)]"
+        className="fixed inset-x-0 top-0 z-[60] h-0.5 origin-left bg-[linear-gradient(90deg,#4d8bff,#22d3ee)]"
       />
 
       <div className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-3 sm:pt-4">

@@ -22,7 +22,7 @@ export const skillGroups: SkillGroup[] = [
     title: "Languages",
     blurb: "Python and Go anchor my recent engineering work.",
     icon: Code2,
-    accent: "#7c8cff",
+    accent: "#4d8bff",
     skills: ["Python", "Go", "C++", "Java", "JavaScript / TypeScript"],
   },
   {
@@ -30,7 +30,7 @@ export const skillGroups: SkillGroup[] = [
     title: "Backend & APIs",
     blurb: "Services built for real-time, distributed workloads.",
     icon: Server,
-    accent: "#5fd6e6",
+    accent: "#22d3ee",
     skills: ["FastAPI", "REST APIs", "gRPC", "Node.js"],
   },
   {
@@ -38,7 +38,7 @@ export const skillGroups: SkillGroup[] = [
     title: "AI / ML",
     blurb: "Applied CV and ML pipelines behind CourtCheck and AeroRoute.",
     icon: BrainCircuit,
-    accent: "#b18cff",
+    accent: "#38bdf8",
     skills: ["PyTorch", "OpenCV", "scikit-learn", "CatBoost"],
   },
   {
@@ -46,7 +46,7 @@ export const skillGroups: SkillGroup[] = [
     title: "Data",
     blurb: "Relational, geospatial, and graph storage.",
     icon: Database,
-    accent: "#b18cff",
+    accent: "#60a5fa",
     skills: ["PostgreSQL", "PostGIS", "Neo4j", "ClickHouse"],
   },
   {
@@ -54,7 +54,7 @@ export const skillGroups: SkillGroup[] = [
     title: "Infrastructure",
     blurb: "Containerized apps shipped and scaled.",
     icon: Boxes,
-    accent: "#7c8cff",
+    accent: "#4d8bff",
     skills: ["Docker", "Kubernetes", "Linux", "Modal", "Git"],
   },
 ];
