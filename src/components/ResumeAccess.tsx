@@ -8,7 +8,7 @@ const clerkEnabled = !!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 // Resume hosted on Google Drive. "View" opens the Drive preview; "Download"
 // pulls the file directly. Swap the resume by changing this file id.
-const RESUME_FILE_ID = "1kciqkz_0QoXHBUmAxqEIru9u5c55RxDm";
+const RESUME_FILE_ID = "13e-USzp-hOAzaoaB0kI96yfpSHLrNWMt";
 const RESUME_VIEW_URL = `https://drive.google.com/file/d/${RESUME_FILE_ID}/view`;
 const RESUME_DOWNLOAD_URL = `https://drive.google.com/uc?export=download&id=${RESUME_FILE_ID}`;
 
