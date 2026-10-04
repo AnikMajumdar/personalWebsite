@@ -66,7 +66,7 @@ export function Contact() {
             <Reveal delay={0.1}>
               <p className="mt-5 max-w-md text-lead text-muted">
                 Have a role, a project, or a question? Send a message and I&rsquo;ll
-                get back to you.
+                get back to you. You can also reach me via email at amaj@ucdavis.edu.
               </p>
             </Reveal>
             <Reveal delay={0.15}>
