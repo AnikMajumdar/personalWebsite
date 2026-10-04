@@ -47,10 +47,14 @@ export const siteConfig = {
   ] satisfies SocialLink[],
 
   about: {
-    statement:
-      "I like building software where the engineering problem connects to a real-world system, from analyzing tennis matches with computer vision to processing spacecraft telemetry and optimizing flight routes with geospatial data.",
-    detail:
-      "My work spans backend systems, AI/ML, and full-stack development, with a focus on turning complex data and workflows into usable software.",
+    image: "/Anik Headshot.JPG",
+    imageAlt: "Anik Majumdar",
+    bio: [
+      "Hi, I'm Anik, a Computer Science student at UC Davis graduating in December 2027. I've worked at startups including Turion Space, where I built mission control software for spacecraft operations, and XIPHI.AI, where I worked with vector databases and backend systems.",
+      "On campus, I'm involved with Aggie Sports Analytics, where I've helped build computer vision and machine learning tools for the UC Davis tennis team. I enjoy working on projects where software connects to a real-world problem, whether that's spacecraft telemetry, sports analytics, or geospatial routing.",
+      "Outside of computer science, I enjoy going to the gym, running, swimming, spending time outdoors, and hanging out with friends. I'm from Orange County, California, so I especially enjoy being near the beach. I'm also working toward my private pilot license and hope to complete it after graduation.",
+      "Looking ahead, I want to work on challenging problems and build technology that has a meaningful real-world impact. I also hope to give back to the communities that have shaped me, including organizations like the Boy Scouts of America and my temple.",
+    ],
   },
 } as const;
 
